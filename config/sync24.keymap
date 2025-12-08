@@ -65,7 +65,7 @@
         num {
             display-name = "Num";
             bindings = <
-&kp ESC  &kp RIGHT_BRACE  &kp BACKSLASH  &kp APOS  &kp LEFT_BRACE  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &trans  &trans  &kp LCMD  &trans  &trans  &trans  &trans  &kp N9  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &trans  &kp LSHFT  &trans  &kp LSHFT  &kp LGUI  &trans  &kp LBKT  &kp END  &none  &kp PAGE_UP  &kp PAGE_DOWN  &kp UP_ARROW  &kp RSHFT  &kp LSHFT  &trans  &trans  &kp LGUI  &kp LGUI  &trans  &trans  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&kp ESC  &kp RIGHT_BRACE  &kp BACKSLASH  &kp APOS  &kp LEFT_BRACE  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &kp  &kp  &kp LCMD  &kp LS(APOS)  &kp LS(INTERNATIONAL_3)  &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp LS(N9)  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &kp  &kp LSHFT  &kp  &kp LSHFT  &kp LGUI  &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp END  &none  &kp PAGE_UP  &kp PAGE_DOWN  &kp UP_ARROW  &kp RSHFT  &kp LSHFT  &kp  &kp  &kp RS(LGUI)  &kp LGUI  &kp  &kp  &kp  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
             >;
         };
 
