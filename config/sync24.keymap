@@ -39,12 +39,18 @@
     };
 
     macros {
-        new_macro: new_macro {
+        new_macro1: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&macro_tap>, <&macro_press>;
-
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
             label = "NEW_MACRO";
+        };
+
+        new_macro2: new_macro2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD &kp SPACE>;
+            label = "NEW_MACRO2";
         };
     };
 
