@@ -56,7 +56,7 @@
         base {
             display-name = "Base";
             bindings = <
-&mt LEFT_ALT ESCAPE  &kp Q  &kp L  &kp U  &kp PERIOD  &kp MINUS  &kp F  &kp W  &kp R  &kp Y  &kp P  &mt RIGHT_ALT BACKSPACE  &lt 1 TAB  &kp E  &kp I  &kp A  &kp O  &kp G  &kp D  &kp T  &kp N  &kp S  &kp H  &kp RET  &kp LSHFT  &kp Z  &mt LEFT_SHIFT X  &lt 2 C  &lt 1 V  &mt LS(SLASH) SLASH  &kp G  &kp K  &kp M  &kp J  &kp B  &kp RSHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LALT  &lt 1 TAB  &mo 2  &mt LEFT_CONTROL SPACE  &mt LEFT_CONTROL SPACE  &lt 3 BACKSPACE  &kp RCMD  &kp RALT  &kp BSLH  &none
+&mt LEFT_ALT ESCAPE  &kp Q  &kp L  &kp U  &kp PERIOD  &kp MINUS  &kp F  &kp W  &kp R  &kp Y  &kp P  &mt RIGHT_ALT BACKSPACE  &lt 1 TAB  &kp E  &kp I  &kp A  &kp O  &kp G  &kp D  &kp T  &kp N  &kp S  &kp H  &kp RET  &kp LSHFT  &kp Z  &mt LEFT_SHIFT X  &lt 2 C  &lt 1 V  &mt LS(SLASH) SLASH  &kp G  &kp K  &kp M  &kp J  &kp B  &kp RSHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LALT  &lt 1 TAB  &mo 2  &mt LEFT_CONTROL SPACE  &mt LEFT_CONTROL SPACE  &lt 3 BACKSPACE  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
             >;
         };
 
