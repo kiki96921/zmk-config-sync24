@@ -65,11 +65,11 @@
             label = "NEW_MACRO3";
         };
 
-        new_macroconma: new_macro {
+        new_macroconma: new_macro4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
-            label = "NEW_MACRO";
+            label = "NEW_MACRO4";
         };
     };
 
