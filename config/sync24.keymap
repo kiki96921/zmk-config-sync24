@@ -53,7 +53,7 @@
         new_macrokakko: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            bindings = <&kp RIGHT_BRACKET &kp BACKSLASH &kp LEFT>;
             label = "NEW_MACRO";
         };
 
@@ -152,7 +152,7 @@
         num {
             display-name = "Num";
             bindings = <
-&kp ESC  &kp RIGHT_BRACE  &kp BACKSLASH  &kp APOS  &kp LEFT_BRACE  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &trans  &trans  &kp LCMD  &kp LS(APOS)  &kp LS(INTERNATIONAL_3)  &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp LS(N9)  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &trans  &kp LSHFT  &trans  &kp LSHFT  &kp LGUI  &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp END  &none  &kp PAGE_UP  &kp PAGE_DOWN  &kp UP_ARROW  &kp RSHFT  &kp LSHFT  &trans  &trans  &kp RS(K_MENU)  &kp C_MENU  &trans  &trans  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&kp ESC  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp APOS  &kp LEFT_BRACE  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &trans  &trans  &kp LCMD  &kp LS(APOS)  &kp LS(INTERNATIONAL_3)  &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp LS(N9)  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &trans  &kp LSHFT  &trans  &kp LSHFT  &kp LGUI  &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp END  &none  &kp PAGE_UP  &kp PAGE_DOWN  &kp UP_ARROW  &kp RSHFT  &kp LSHFT  &trans  &trans  &kp RS(K_MENU)  &kp C_MENU  &trans  &trans  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
             >;
         };
 
@@ -161,7 +161,7 @@
         function {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &kp EQUAL  &kp ASTERISK  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp ENTER  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DOT  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &kp N0  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &kp EQUAL  &kp ASTERISK  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp ENTER  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DOT  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &kp N0  &trans  &trans  &trans  &trans
             >;
         };
 
