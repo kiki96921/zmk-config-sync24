@@ -42,6 +42,11 @@
             bindings = <&new_macrokakko>;
             key-positions = <2 3 4>;
         };
+
+        nnn {
+            bindings = <&new_macro_nnn>;
+            key-positions = <20 21>;
+        };
     };
 
     macros {
@@ -71,6 +76,13 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
             label = "NEW_MACRO4";
+        };
+
+        new_macro_nnn: new_macro_nnn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp N &kp N>;
+            label = "NEW_MACRO_NNN";
         };
     };
 
