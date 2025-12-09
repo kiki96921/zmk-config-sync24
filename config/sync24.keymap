@@ -39,7 +39,7 @@
 
         kakko {
             bindings = <&new_macrokakko>;
-            key-positions = <1 2 3>;
+            key-positions = <2 3 4>;
         };
     };
 
@@ -100,6 +100,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        new_behavior_thumb: new_behavior_thumb {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR_THUMB";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -110,7 +119,7 @@
         base {
             display-name = "Base";
             bindings = <
-&mt LEFT_ALT ESCAPE  &kp Q  &kp L  &kp U  &new_behaviorq 0 PERIOD  &kp MINUS  &kp F  &kp W  &kp R  &kp Y  &kp P  &mt RIGHT_ALT BACKSPACE  &lt 1 TAB  &kp E  &kp I  &kp A  &kp O  &new_behaviorconma 0 COMMA  &kp D  &kp T  &kp N  &kp S  &kp H  &kp RET  &kp LSHFT  &kp Z  &mt LEFT_SHIFT X  &lt 2 C  &lt 1 V  &new_behaviorq 0 SLASH  &kp G  &kp K  &kp M  &kp J  &kp B  &kp RSHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LALT  &lt 1 TAB  &mo 2  &mt LEFT_CONTROL SPACE  &mt LEFT_CONTROL SPACE  &lt 3 BACKSPACE  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
+&mt LEFT_ALT ESCAPE  &kp Q  &kp L  &kp U  &new_behaviorperi 0 PERIOD  &kp MINUS  &kp F  &kp W  &kp R  &kp Y  &kp P  &mt RIGHT_ALT BACKSPACE  &lt 1 TAB  &kp E  &kp I  &kp A  &kp O  &new_behaviorconma 0 COMMA  &kp D  &kp T  &kp N  &kp S  &kp H  &kp RET  &kp LSHFT  &kp Z  &mt LEFT_SHIFT X  &lt 2 C  &lt 1 V  &new_behaviorq 0 SLASH  &kp G  &kp K  &kp M  &kp J  &kp B  &kp RSHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LALT  &lt 1 TAB  &mo 2  &mt LEFT_CONTROL SPACE  &mt LEFT_CONTROL SPACE  &lt 3 BACKSPACE  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
             >;
         };
 
