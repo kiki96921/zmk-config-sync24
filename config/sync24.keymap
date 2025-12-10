@@ -92,7 +92,7 @@
             label = "NEW_BEHAVIORPERI";
             bindings = <&new_macroperi>, <&kp>;
 
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
@@ -101,7 +101,7 @@
             label = "NEW_BEHAVIORQ";
             bindings = <&new_macroq>, <&kp>;
 
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
@@ -110,7 +110,7 @@
             label = "NEW_BEHAVIORCONMA";
             bindings = <&new_macroconma>, <&kp>;
 
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
 
