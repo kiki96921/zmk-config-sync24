@@ -82,6 +82,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N &kp N &kp N>;
+            tap-ms = <5>;   // キーを押している時間（5msくらい。もっと攻めたければ 3 とかでも可）
+            wait-ms = <0>;  // 次のキーまでの待ち時間を 0 に
             label = "NEW_MACRO_NNN";
         };
     };
