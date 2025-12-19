@@ -96,23 +96,23 @@
             layers = <0>;
         };
 
-        left_win {
-            bindings = <&kp LEFT_GUI>;
-            key-positions = <2 14>;
-        };
-
-        right_win {
-            bindings = <&kp RIGHT_GUI>;
-            key-positions = <9 21>;
-        };
-
         left_alt2 {
             bindings = <&kp LEFT_ALT>;
-            key-positions = <5 17>;
+            key-positions = <2 14>;
         };
 
         right_alt2 {
             bindings = <&kp RIGHT_ALT>;
+            key-positions = <9 21>;
+        };
+
+        left_gui2 {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <5 17>;
+        };
+
+        right_gui2 {
+            bindings = <&kp RIGHT_GUI>;
             key-positions = <6 18>;
         };
     };
