@@ -211,7 +211,7 @@
         function {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &kp EQUAL  &kp ASTERISK  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DOT  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &kp N0  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp K_MENU  &kp RS(F10)  &kp EQUAL  &kp ASTERISK  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DOT  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &kp N0  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
             >;
         };
 
