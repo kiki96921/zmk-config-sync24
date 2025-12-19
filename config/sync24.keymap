@@ -19,68 +19,81 @@
             timeout-ms = <50>;
             key-positions = <15 16>;
             bindings = <&kp INTERNATIONAL_5>;
+            layers = <0>;
         };
 
         combo_kana {
             timeout-ms = <50>;
             key-positions = <20 19>;
             bindings = <&kp INTERNATIONAL_4>;
+            layers = <0>;
         };
 
         combo_util {
             timeout-ms = <50>;
             key-positions = <16 15 14>;
             bindings = <&kp LEFT_CONTROL>;
+            layers = <0>;
         };
 
         name {
             bindings = <&kp RIGHT_CONTROL>;
             key-positions = <19 20 21>;
+            layers = <0>;
         };
 
         kakko {
             bindings = <&new_macrokakko>;
             key-positions = <2 3 4>;
+            layers = <0>;
         };
 
         nnn {
             bindings = <&new_macro_nnn>;
             key-positions = <20 21>;
+            layers = <0>;
         };
 
         shift1 {
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <14 26>;
+            layers = <0>;
         };
 
         shift2 {
             bindings = <&kp RIGHT_SHIFT>;
             key-positions = <21 33>;
+            layers = <0>;
         };
 
         ctrl1 {
             bindings = <&kp RIGHT_CONTROL>;
             key-positions = <15 27>;
+            layers = <0>;
         };
 
         ctrl2 {
             bindings = <&kp RIGHT_CONTROL>;
             key-positions = <20 32>;
+            layers = <0>;
         };
 
         space1 {
             bindings = <&kp SPACE>;
             key-positions = <16 28>;
+            layers = <0>;
         };
 
         space2 {
             bindings = <&kp SPACE>;
             key-positions = <19 31>;
+            layers = <0>;
         };
 
         layer1 {
             bindings = <&mo 1>;
             key-positions = <31 32>;
+            layers = <0>;
         };
     };
 
@@ -198,7 +211,7 @@
         function {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &kp EQUAL  &kp ASTERISK  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DOT  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &kp N0  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &kp EQUAL  &kp ASTERISK  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DOT  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &kp N0  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
             >;
         };
 
@@ -207,7 +220,7 @@
         util {
             display-name = "Util";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &trans  &kp F7  &kp F8  &kp F9  &kp F12  &kp DEL  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &trans  &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp RIGHT_SHIFT  &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &trans  &kp F7  &kp F8  &kp F9  &kp F12  &kp DEL  &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &kp LG(LS(PRINTSCREEN))  &kp PRINTSCREEN  &trans  &trans  &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp RIGHT_SHIFT  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
             >;
         };
 
