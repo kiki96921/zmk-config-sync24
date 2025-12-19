@@ -202,7 +202,7 @@
         num {
             display-name = "Num";
             bindings = <
-&kp ESC  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp SEMICOLON  &kp RS(LBKT)  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &trans  &kp DEL  &kp LCMD  &kp APOS  &kp LS(INTERNATIONAL_3)  &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp LS(N9)  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &trans  &kp LSHFT  &kp LEFT_ALT  &kp LSHFT  &kp LGUI  &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp END  &kp ESCAPE  &kp PAGE_UP  &kp PAGE_DOWN  &kp RIGHT_ALT  &kp RSHFT  &kp LSHFT  &trans  &trans  &kp RS(K_APP)  &kp K_APP  &trans  &trans  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&kp ESC  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp SEMICOLON  &kp LBKT  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &trans  &kp DEL  &kp LCMD  &kp APOS  &kp LS(INTERNATIONAL_3)  &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp LS(N9)  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &trans  &kp LSHFT  &kp LEFT_ALT  &kp LSHFT  &kp LGUI  &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp END  &kp ESCAPE  &kp PAGE_UP  &kp PAGE_DOWN  &kp RIGHT_ALT  &kp RSHFT  &kp LSHFT  &trans  &trans  &kp RS(K_APP)  &kp K_APP  &trans  &trans  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
             >;
         };
 
