@@ -56,25 +56,25 @@
 
         shift1 {
             bindings = <&kp LEFT_SHIFT>;
-            key-positions = <14 26>;
+            key-positions = <16 4>;
             layers = <0>;
         };
 
         shift2 {
             bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <21 33>;
+            key-positions = <19 7>;
             layers = <0>;
         };
 
         ctrl1 {
             bindings = <&kp RIGHT_CONTROL>;
-            key-positions = <15 27>;
+            key-positions = <15 3>;
             layers = <0>;
         };
 
         ctrl2 {
             bindings = <&kp RIGHT_CONTROL>;
-            key-positions = <20 32>;
+            key-positions = <20 8>;
             layers = <0>;
         };
 
@@ -94,6 +94,16 @@
             bindings = <&mo 1>;
             key-positions = <31 32>;
             layers = <0>;
+        };
+
+        left_win {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <2 14>;
+        };
+
+        right_win {
+            bindings = <&kp RIGHT_GUI>;
+            key-positions = <9 21>;
         };
     };
 
