@@ -105,6 +105,16 @@
             bindings = <&kp RIGHT_GUI>;
             key-positions = <9 21>;
         };
+
+        left_alt2 {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <5 17>;
+        };
+
+        right_alt2 {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <6 18>;
+        };
     };
 
     macros {
