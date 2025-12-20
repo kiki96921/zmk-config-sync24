@@ -108,12 +108,12 @@
 
         left_gui2 {
             bindings = <&kp LEFT_GUI>;
-            key-positions = <5 17>;
+            key-positions = <14 26>;
         };
 
         right_gui2 {
             bindings = <&kp RIGHT_GUI>;
-            key-positions = <6 18>;
+            key-positions = <21 33>;
         };
     };
 
