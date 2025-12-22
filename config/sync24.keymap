@@ -116,11 +116,6 @@
             bindings = <&kp RIGHT_GUI>;
             key-positions = <21 33>;
         };
-
-        mo3 {
-            bindings = <&mo 3>;
-            key-positions = <40 41>;
-        };
     };
 
     macros {
