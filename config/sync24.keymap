@@ -116,6 +116,11 @@
             bindings = <&kp RIGHT_GUI>;
             key-positions = <21 33>;
         };
+
+        ze {
+            bindings = <&new_macro_ze>;
+            key-positions = <25 13>;
+        };
     };
 
     macros {
@@ -154,6 +159,13 @@
             tap-ms = <5>;   // キーを押している時間（5msくらい。もっと攻めたければ 3 とかでも可）
             wait-ms = <0>;  // 次のキーまでの待ち時間を 0 に
             label = "NEW_MACRO_NNN";
+        };
+
+        new_macro_ze: new_macro_ze {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp E>;
+            label = "NEW_MACRO_ZE";
         };
     };
 
