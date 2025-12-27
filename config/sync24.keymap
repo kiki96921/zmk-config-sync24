@@ -20,7 +20,7 @@
         // 1. 特殊・ユーティリティ (優先度：最優先)
         combo_us { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp INTERNATIONAL_5>; };
         combo_kana { timeout-ms = <50>; key-positions = <20 19>; bindings = <&kp INTERNATIONAL_4>; };
-        nnn { timeout-ms = <50>; key-positions = <20 21>; bindings = <&new_macro_nnn>; };
+        nnn { timeout-ms = <50>; key-positions = <20 21>; bindings = <&new_macro_nn>; };
         ze { timeout-ms = <50>; key-positions = <25 13>; bindings = <&new_macro_ze>; };
 
         // 2. ★ 3文字コンボ (二重母音・長音・拗音) ★
@@ -174,7 +174,7 @@
         new_macroperi: new_macroperi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp PERIOD &kp SPACE>; };
         new_macroq: new_macroq { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LS(SLASH) &kp SPACE>; };
         new_macroconma: new_macroconma { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp COMMA &kp SPACE>; };
-        new_macro_nnn: new_macro_nnn { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N>; tap-ms = <5>; wait-ms = <0>; };
+        new_macro_nnn: new_macro_nnn { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N>; tap-ms = <5>; wait-ms = <0>; };
         new_macro_ze: new_macro_ze { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp Z &kp E>; };
 
         m_nai: m_nai { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp A &kp I>; };
