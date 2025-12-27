@@ -1,7 +1,5 @@
 #define ZMK_BEHAVIORS_OMIT_KT
-
 #undef ZMK_BEHAVIORS_KEEP_ALL
-
 #define ZMK_BEHAVIORS_KEEP_SK
 #define ZMK_BEHAVIORS_KEEP_MT
 #define ZMK_BEHAVIORS_KEEP_KT
@@ -13,280 +11,256 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_us {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp INTERNATIONAL_5>;
-            layers = <0>;
-        };
-
-        combo_kana {
-            timeout-ms = <50>;
-            key-positions = <20 19>;
-            bindings = <&kp INTERNATIONAL_4>;
-            layers = <0>;
-        };
-
-        combo_util {
-            timeout-ms = <50>;
-            key-positions = <16 15 14>;
-            bindings = <&kp LEFT_CONTROL>;
-            layers = <0>;
-        };
-
-        name {
-            bindings = <&kp RIGHT_CONTROL>;
-            key-positions = <19 20 21>;
-            layers = <0>;
-        };
-
-        kakko {
-            bindings = <&new_macrokakko>;
-            key-positions = <2 3 4>;
-            layers = <0>;
-        };
-
-        nnn {
-            bindings = <&new_macro_nnn>;
-            key-positions = <20 21>;
-            layers = <0>;
-        };
-
-        shift1 {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <16 4>;
-            layers = <0>;
-        };
-
-        shift2 {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <19 7>;
-            layers = <0>;
-        };
-
-        ctrl1 {
-            bindings = <&kp RIGHT_CONTROL>;
-            key-positions = <15 3>;
-            layers = <0>;
-        };
-
-        ctrl2 {
-            bindings = <&kp RIGHT_CONTROL>;
-            key-positions = <20 8>;
-            layers = <0>;
-        };
-
-        space1 {
-            bindings = <&kp SPACE>;
-            key-positions = <16 28>;
-            layers = <0>;
-        };
-
-        space2 {
-            bindings = <&kp SPACE>;
-            key-positions = <19 31>;
-            layers = <0>;
-        };
-
-        layer1 {
-            bindings = <&mo 1>;
-            key-positions = <31 32>;
-            layers = <0>;
-        };
-
-        left_alt2 {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <2 14>;
-        };
-
-        right_alt2 {
-            bindings = <&kp RIGHT_ALT>;
-            key-positions = <9 21>;
-        };
-
-        left_gui2 {
-            bindings = <&kp LEFT_GUI>;
-            key-positions = <14 26>;
-        };
-
-        right_gui2 {
-            bindings = <&kp RIGHT_GUI>;
-            key-positions = <21 33>;
-        };
-
-        ze {
-            bindings = <&new_macro_ze>;
-            key-positions = <25 13>;
-        };
-    };
-
+    /* ==========================================================================
+       Macros: 打鍵順によらず「子音→母音」の順で出力する定義
+       ========================================================================== */
     macros {
+        // 既存のマクロ
         new_macrokakko: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_BRACKET &kp BACKSLASH &kp ENTER &kp LEFT>;
             label = "NEW_MACRO";
         };
-
         new_macroperi: new_macro2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp PERIOD &kp SPACE>;
             label = "NEW_MACRO2";
         };
-
         new_macroq: new_macro3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(SLASH) &kp SPACE>;
             label = "NEW_MACRO3";
         };
-
         new_macroconma: new_macro4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
             label = "NEW_MACRO4";
         };
-
         new_macro_nnn: new_macro_nnn {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp N &kp N &kp N>;
-            tap-ms = <5>;   // キーを押している時間（5msくらい。もっと攻めたければ 3 とかでも可）
-            wait-ms = <0>;  // 次のキーまでの待ち時間を 0 に
+            tap-ms = <5>;
+            wait-ms = <0>;
             label = "NEW_MACRO_NNN";
         };
-
         new_macro_ze: new_macro_ze {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp Z &kp E>;
             label = "NEW_MACRO_ZE";
         };
+
+        // --- 大西配列補正用マクロ（追加分） ---
+        m_na: m_na { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp A>; label = "M_NA"; };
+        m_ni: m_ni { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp I>; label = "M_NI"; };
+        m_nu: m_nu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp U>; label = "M_NU"; };
+        m_ne: m_ne { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp E>; label = "M_NE"; };
+        m_no: m_no { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp O>; label = "M_NO"; };
+
+        m_ka: m_ka { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp A>; label = "M_KA"; };
+        m_ki: m_ki { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp I>; label = "M_KI"; };
+        m_ku: m_ku { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp U>; label = "M_KU"; };
+        m_ke: m_ke { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp E>; label = "M_KE"; };
+        m_ko: m_ko { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp O>; label = "M_KO"; };
+
+        m_sa: m_sa { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp A>; label = "M_SA"; };
+        m_si: m_si { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp I>; label = "M_SI"; };
+        m_su: m_su { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp U>; label = "M_SU"; };
+        m_se: m_se { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp E>; label = "M_SE"; };
+        m_so: m_so { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp O>; label = "M_SO"; };
+
+        m_ta: m_ta { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp A>; label = "M_TA"; };
+        m_ti: m_ti { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp I>; label = "M_TI"; };
+        m_tu: m_tu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp U>; label = "M_TU"; };
+        m_te: m_te { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp E>; label = "M_TE"; };
+        m_to: m_to { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T &kp O>; label = "M_TO"; };
+
+        m_ha: m_ha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp A>; label = "M_HA"; };
+        m_hi: m_hi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp I>; label = "M_HI"; };
+        m_hu: m_hu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp U>; label = "M_HU"; };
+        m_he: m_he { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp E>; label = "M_HE"; };
+        m_ho: m_ho { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H &kp O>; label = "M_HO"; };
+
+        m_ma: m_ma { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp A>; label = "M_MA"; };
+        m_mi: m_mi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp I>; label = "M_MI"; };
+        m_mu: m_mu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp U>; label = "M_MU"; };
+        m_me: m_me { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp E>; label = "M_ME"; };
+        m_mo: m_mo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp O>; label = "M_MO"; };
     };
 
+    /* ==========================================================================
+       Combos: 物理キーの組み合わせと機能の紐付け
+       ========================================================================== */
+    combos {
+        compatible = "zmk,combos";
+
+        // --- 既存の特殊コンボ ---
+        combo_us { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp INTERNATIONAL_5>; layers = <0>; }; 
+        combo_kana { timeout-ms = <50>; key-positions = <20 19>; bindings = <&kp INTERNATIONAL_4>; layers = <0>; };
+        combo_util { timeout-ms = <50>; key-positions = <16 15 14>; bindings = <&kp LEFT_CONTROL>; layers = <0>; };
+        name { timeout-ms = <50>; key-positions = <19 20 21>; bindings = <&kp RIGHT_CONTROL>; layers = <0>; };
+        kakko { timeout-ms = <50>; key-positions = <2 3 4>; bindings = <&new_macrokakko>; layers = <0>; };
+        nnn { timeout-ms = <50>; key-positions = <20 21>; bindings = <&new_macro_nnn>; layers = <0>; };
+        
+        // --- モディファイア・レイヤー用コンボ ---
+        shift1 { timeout-ms = <50>; key-positions = <16 4>; bindings = <&kp LEFT_SHIFT>; layers = <0>; };
+        shift2 { timeout-ms = <50>; key-positions = <19 7>; bindings = <&kp RIGHT_SHIFT>; layers = <0>; };
+        ctrl1 { timeout-ms = <50>; key-positions = <15 3>; bindings = <&kp RIGHT_CONTROL>; layers = <0>; };
+        ctrl2 { timeout-ms = <50>; key-positions = <20 8>; bindings = <&kp RIGHT_CONTROL>; layers = <0>; };
+        space1 { timeout-ms = <50>; key-positions = <16 28>; bindings = <&kp SPACE>; layers = <0>; };
+        space2 { timeout-ms = <50>; key-positions = <19 31>; bindings = <&kp SPACE>; layers = <0>; };
+        layer1 { timeout-ms = <50>; key-positions = <31 32>; bindings = <&mo 1>; layers = <0>; };
+        left_alt2 { timeout-ms = <50>; key-positions = <2 14>; bindings = <&kp LEFT_ALT>; };
+        right_alt2 { timeout-ms = <50>; key-positions = <9 21>; bindings = <&kp RIGHT_ALT>; };
+        left_gui2 { timeout-ms = <50>; key-positions = <14 26>; bindings = <&kp LEFT_GUI>; };
+        right_gui2 { timeout-ms = <50>; key-positions = <21 33>; bindings = <&kp RIGHT_GUI>; };
+
+        // --- 大西配列：同時押し高速補正 (Timeout 50ms) ---
+        // A=15, I=14, U=3, E=13, O=16
+
+        // な行 (N=20)
+        cb_na { timeout-ms = <50>; key-positions = <20 15>; bindings = <&m_na>; layers = <0>; };
+        cb_ni { timeout-ms = <50>; key-positions = <20 14>; bindings = <&m_ni>; layers = <0>; };
+        cb_nu { timeout-ms = <50>; key-positions = <20 3>;  bindings = <&m_nu>; layers = <0>; };
+        cb_ne { timeout-ms = <50>; key-positions = <20 13>; bindings = <&m_ne>; layers = <0>; };
+        cb_no { timeout-ms = <50>; key-positions = <20 16>; bindings = <&m_no>; layers = <0>; };
+
+        // か行 (K=31)
+        cb_ka { timeout-ms = <50>; key-positions = <31 15>; bindings = <&m_ka>; layers = <0>; };
+        cb_ki { timeout-ms = <50>; key-positions = <31 14>; bindings = <&m_ki>; layers = <0>; };
+        cb_ku { timeout-ms = <50>; key-positions = <31 3>;  bindings = <&m_ku>; layers = <0>; };
+        cb_ke { timeout-ms = <50>; key-positions = <31 13>; bindings = <&m_ke>; layers = <0>; };
+        cb_ko { timeout-ms = <50>; key-positions = <31 16>; bindings = <&m_ko>; layers = <0>; };
+
+        // さ行 (S=21)
+        cb_sa { timeout-ms = <50>; key-positions = <21 15>; bindings = <&m_sa>; layers = <0>; };
+        cb_si { timeout-ms = <50>; key-positions = <21 14>; bindings = <&m_si>; layers = <0>; };
+        cb_su { timeout-ms = <50>; key-positions = <21 3>;  bindings = <&m_su>; layers = <0>; };
+        cb_se { timeout-ms = <50>; key-positions = <21 13>; bindings = <&m_se>; layers = <0>; };
+        cb_so { timeout-ms = <50>; key-positions = <21 16>; bindings = <&m_so>; layers = <0>; };
+
+        // た行 (T=19)
+        cb_ta { timeout-ms = <50>; key-positions = <19 15>; bindings = <&m_ta>; layers = <0>; };
+        cb_ti { timeout-ms = <50>; key-positions = <19 14>; bindings = <&m_ti>; layers = <0>; };
+        cb_tu { timeout-ms = <50>; key-positions = <19 3>;  bindings = <&m_tu>; layers = <0>; };
+        cb_te { timeout-ms = <50>; key-positions = <19 13>; bindings = <&m_te>; layers = <0>; };
+        cb_to { timeout-ms = <50>; key-positions = <19 16>; bindings = <&m_to>; layers = <0>; };
+
+        // は行 (H=22)
+        cb_ha { timeout-ms = <50>; key-positions = <22 15>; bindings = <&m_ha>; layers = <0>; };
+        cb_hi { timeout-ms = <50>; key-positions = <22 14>; bindings = <&m_hi>; layers = <0>; };
+        cb_hu { timeout-ms = <50>; key-positions = <22 3>;  bindings = <&m_hu>; layers = <0>; };
+        cb_he { timeout-ms = <50>; key-positions = <22 13>; bindings = <&m_he>; layers = <0>; };
+        cb_ho { timeout-ms = <50>; key-positions = <22 16>; bindings = <&m_ho>; layers = <0>; };
+
+        // ま行 (M=32)
+        cb_ma { timeout-ms = <50>; key-positions = <32 15>; bindings = <&m_ma>; layers = <0>; };
+        cb_mi { timeout-ms = <50>; key-positions = <32 14>; bindings = <&m_mi>; layers = <0>; };
+        cb_mu { timeout-ms = <50>; key-positions = <32 3>;  bindings = <&m_mu>; layers = <0>; };
+        cb_me { timeout-ms = <50>; key-positions = <32 13>; bindings = <&m_me>; layers = <0>; };
+        cb_mo { timeout-ms = <50>; key-positions = <32 16>; bindings = <&m_mo>; layers = <0>; };
+
+        // ぜ (Z=25, E=13)
+        cb_ze { timeout-ms = <50>; key-positions = <25 13>; bindings = <&new_macro_ze>; layers = <0>; };
+    };
+
+    /* ==========================================================================
+       Behaviors: タップ・ホールド等の挙動定義
+       ========================================================================== */
     behaviors {
         new_behaviorperi: new_behaviorperi {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIORPERI";
             bindings = <&new_macroperi>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
         new_behaviorq: new_behaviorq {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIORQ";
             bindings = <&new_macroq>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
         new_behaviorconma: new_behaviorconma {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIORCONMA";
             bindings = <&new_macroconma>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
         new_behavior_thumb: new_behavior_thumb {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR_THUMB";
             bindings = <&mo>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
         };
-
         new_behavior_altbs: new_behavior_altbs {
             compatible = "zmk,behavior-hold-tap";
             label = "NEW_BEHAVIOR_ALTBS";
             bindings = <&kp>, <&kp>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
         };
     };
 
+    /* ==========================================================================
+       Keymap: 各レイヤーのキー配置定義
+       ========================================================================== */
     keymap {
         compatible = "zmk,keymap";
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         base {
             display-name = "Base";
             bindings = <
-&mt LEFT_ALT ESCAPE  &kp Q  &kp L  &kp U  &new_behaviorperi 0 PERIOD  &kp MINUS  &kp F  &kp W  &kp R  &kp Y  &kp P  &new_behavior_altbs RIGHT_ALT BACKSPACE  &new_behavior_thumb 1 TAB  &kp E  &kp I  &kp A  &kp O  &new_behaviorconma 0 COMMA  &kp D  &kp T  &kp N  &kp S  &kp H  &kp RET  &new_behavior_altbs LSHFT PAGE_UP  &kp Z  &mt LEFT_SHIFT X  &new_behavior_thumb 2 C  &new_behavior_thumb 1 V  &new_behaviorq 0 SLASH  &kp G  &kp K  &kp M  &kp J  &kp B  &new_behavior_altbs RSHIFT PAGE_DOWN  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LALT  &lt 1 TAB  &mo 2  &mt LEFT_CONTROL SPACE  &mt LEFT_CONTROL SPACE  &new_behavior_thumb 3 BACKSPACE  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT
+&mt LEFT_ALT ESCAPE &kp Q &kp L &kp U &new_behaviorperi 0 PERIOD &kp MINUS &kp F &kp W &kp R &kp Y &kp P &new_behavior_altbs RIGHT_ALT BACKSPACE 
+&new_behavior_thumb 1 TAB &kp E &kp I &kp A &kp O &new_behaviorconma 0 COMMA &kp D &kp T &kp N &kp S &kp H &kp RET 
+&new_behavior_altbs LSHFT PAGE_UP &kp Z &mt LEFT_SHIFT X &new_behavior_thumb 2 C &new_behavior_thumb 1 V &new_behaviorq 0 SLASH &kp G &kp K &kp M &kp J &kp B &new_behavior_altbs RSHIFT PAGE_DOWN 
+&kp LEFT_CONTROL &kp LEFT_GUI &kp LALT &lt 1 TAB &mo 2 &mt LEFT_CONTROL SPACE &mt LEFT_CONTROL SPACE &new_behavior_thumb 3 BACKSPACE &kp LEFT_ARROW &kp UP_ARROW &kp DOWN_ARROW &kp RIGHT
             >;
         };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         num {
             display-name = "Num";
             bindings = <
-&kp ESC  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp SEMICOLON  &kp LBKT  &kp EQUAL  &kp MINUS  &kp BSPC  &kp UP_ARROW  &kp DEL  &trans  &kp DEL  &kp LCMD  &kp APOS  &kp LS(INTERNATIONAL_3)  &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp LS(N9)  &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LCTRL  &trans  &kp LSHFT  &kp LEFT_ALT  &kp LSHFT  &kp LGUI  &kp LS(LEFT_BRACE)  &kp RIGHT_BRACE  &kp END  &kp ESCAPE  &kp PAGE_UP  &kp PAGE_DOWN  &kp RIGHT_ALT  &kp RSHFT  &kp LSHFT  &trans  &trans  &kp RS(K_APP)  &kp K_APP  &trans  &trans  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&kp ESC &kp RIGHT_BRACKET &kp BACKSLASH &kp SEMICOLON &kp LBKT &kp EQUAL &kp MINUS &kp BSPC &kp UP_ARROW &kp DEL &trans &kp DEL 
+&kp LCMD &kp APOS &kp LS(INTERNATIONAL_3) &kp LS(INTERNATIONAL_1) &kp INTERNATIONAL_3 &kp LS(N9) &kp HOME &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &kp LCTRL &trans 
+&kp LSHFT &kp LEFT_ALT &kp LSHFT &kp LGUI &kp LS(LEFT_BRACE) &kp RIGHT_BRACE &kp END &kp ESCAPE &kp PAGE_UP &kp PAGE_DOWN &kp RIGHT_ALT &kp RSHFT 
+&kp LSHFT &trans &trans &kp RS(K_APP) &kp K_APP &trans &trans &trans &kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END
             >;
         };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         function {
             display-name = "Function";
             bindings = <
-&trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &kp BSPC  &kp N7  &kp N8  &kp N9  &kp KP_MINUS  &kp INS  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp LS(K_APP)  &kp K_APP  &kp EQUAL  &kp KP_ASTERISK  &kp N4  &kp N5  &kp N6  &kp KP_PLUS  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp LC(C)  &kp LA(LC(V))  &trans  &kp KP_COMMA  &kp N1  &kp N2  &kp N3  &kp KP_SLASH  &kp KP_DOT  &mo 3  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans  &kp N0  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&trans &trans &trans &mkp MB1 &mkp MB2 &trans &kp BSPC &kp N7 &kp N8 &kp N9 &kp KP_MINUS &kp INS 
+&trans &kp C_VOLUME_DOWN &kp C_VOLUME_UP &kp LS(K_APP) &kp K_APP &kp EQUAL &kp KP_ASTERISK &kp N4 &kp N5 &kp N6 &kp KP_PLUS &trans 
+&trans &trans &kp LEFT_SHIFT &kp LC(C) &kp LA(LC(V)) &trans &kp KP_COMMA &kp N1 &kp N2 &kp N3 &kp KP_SLASH &kp KP_DOT 
+&mo 3 &trans &trans &mkp MB1 &mkp MB2 &trans &trans &kp N0 &kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END
             >;
         };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         util {
             display-name = "Util";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &trans  &kp F7  &kp F8  &kp F9  &kp F12  &kp DEL  &studio_unlock  &trans  &trans  &trans  &out OUT_BLE  &out OUT_USB  &trans  &kp F4  &kp F5  &kp F6  &kp F11  &trans  &trans  &kp LG(LS(PRINTSCREEN))  &kp PRINTSCREEN  &trans  &trans  &kp A  &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_SHIFT  &kp RIGHT_SHIFT  &trans  &kp HOME  &kp PAGE_UP  &kp PAGE_DOWN  &kp END
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &trans &kp F7 &kp F8 &kp F9 &kp F12 &kp DEL 
+&studio_unlock &trans &trans &trans &out OUT_BLE &out OUT_USB &trans &kp F4 &kp F5 &kp F6 &kp F11 &trans 
+&trans &kp LG(LS(PRINTSCREEN)) &kp PRINTSCREEN &trans &trans &kp A &trans &kp F1 &kp F2 &kp F3 &kp F10 &trans 
+&trans &trans &trans &trans &trans &kp LEFT_SHIFT &kp RIGHT_SHIFT &trans &kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END
             >;
         };
 
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        extra1 {
-            status = "reserved";
-            bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            >;
-        };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
-        extra2 {
-            status = "reserved";
-            bindings = <
-&none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            >;
-        };
-
-        layer_6 {
-            display-name = "Util";
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &none  &none  &none  &none  &none  &none  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            >;
-        };
-
-        layer_7 {
-            display-name = "Util";
-            bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR  &none  &none  &none  &none  &none  &none  &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none
-            >;
-        };
+        extra1 { status = "reserved"; bindings = < &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >; };
+        extra2 { status = "reserved"; bindings = < &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >; };
+        layer_6 { display-name = "Util"; bindings = < &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &none &none &none &none &none &none &studio_unlock &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >; };
+        layer_7 { display-name = "Util"; bindings = < &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR &none &none &none &none &none &none &studio_unlock &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none >; };
     };
 };
