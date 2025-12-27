@@ -121,6 +121,37 @@
             bindings = <&new_macro_ze>;
             key-positions = <25 13>;
         };
+/* --- 大西配列：同時押し高速補正 (Timeout 50ms) --- */
+        cb_na { timeout-ms = <50>; key-positions = <20 15>; bindings = <&m_na>; layers = <0>; };
+        cb_ni { timeout-ms = <50>; key-positions = <20 14>; bindings = <&m_ni>; layers = <0>; };
+        cb_nu { timeout-ms = <50>; key-positions = <20 3>;  bindings = <&m_nu>; layers = <0>; };
+        cb_ne { timeout-ms = <50>; key-positions = <20 13>; bindings = <&m_ne>; layers = <0>; };
+        cb_no { timeout-ms = <50>; key-positions = <20 16>; bindings = <&m_no>; layers = <0>; };
+        cb_ka { timeout-ms = <50>; key-positions = <31 15>; bindings = <&m_ka>; layers = <0>; };
+        cb_ki { timeout-ms = <50>; key-positions = <31 14>; bindings = <&m_ki>; layers = <0>; };
+        cb_ku { timeout-ms = <50>; key-positions = <31 3>;  bindings = <&m_ku>; layers = <0>; };
+        cb_ke { timeout-ms = <50>; key-positions = <31 13>; bindings = <&m_ke>; layers = <0>; };
+        cb_ko { timeout-ms = <50>; key-positions = <31 16>; bindings = <&m_ko>; layers = <0>; };
+        cb_sa { timeout-ms = <50>; key-positions = <21 15>; bindings = <&m_sa>; layers = <0>; };
+        cb_si { timeout-ms = <50>; key-positions = <21 14>; bindings = <&m_si>; layers = <0>; };
+        cb_su { timeout-ms = <50>; key-positions = <21 3>;  bindings = <&m_su>; layers = <0>; };
+        cb_se { timeout-ms = <50>; key-positions = <21 13>; bindings = <&m_se>; layers = <0>; };
+        cb_so { timeout-ms = <50>; key-positions = <21 16>; bindings = <&m_so>; layers = <0>; };
+        cb_ta { timeout-ms = <50>; key-positions = <19 15>; bindings = <&m_ta>; layers = <0>; };
+        cb_ti { timeout-ms = <50>; key-positions = <19 14>; bindings = <&m_ti>; layers = <0>; };
+        cb_tu { timeout-ms = <50>; key-positions = <19 3>;  bindings = <&m_tu>; layers = <0>; };
+        cb_te { timeout-ms = <50>; key-positions = <19 13>; bindings = <&m_te>; layers = <0>; };
+        cb_to { timeout-ms = <50>; key-positions = <19 16>; bindings = <&m_to>; layers = <0>; };
+        cb_ha { timeout-ms = <50>; key-positions = <22 15>; bindings = <&m_ha>; layers = <0>; };
+        cb_hi { timeout-ms = <50>; key-positions = <22 14>; bindings = <&m_hi>; layers = <0>; };
+        cb_hu { timeout-ms = <50>; key-positions = <22 3>;  bindings = <&m_hu>; layers = <0>; };
+        cb_he { timeout-ms = <50>; key-positions = <22 13>; bindings = <&m_he>; layers = <0>; };
+        cb_ho { timeout-ms = <50>; key-positions = <22 16>; bindings = <&m_ho>; layers = <0>; };
+        cb_ma { timeout-ms = <50>; key-positions = <32 15>; bindings = <&m_ma>; layers = <0>; };
+        cb_mi { timeout-ms = <50>; key-positions = <32 14>; bindings = <&m_mi>; layers = <0>; };
+        cb_mu { timeout-ms = <50>; key-positions = <32 3>;  bindings = <&m_mu>; layers = <0>; };
+        cb_me { timeout-ms = <50>; key-positions = <32 13>; bindings = <&m_me>; layers = <0>; };
+        cb_mo { timeout-ms = <50>; key-positions = <32 16>; bindings = <&m_mo>; layers = <0>; };
     };
 
     macros {
@@ -167,6 +198,37 @@
             bindings = <&kp Z &kp E>;
             label = "NEW_MACRO_ZE";
         };
+/* --- 大西配列補正用マクロ --- */
+        m_na: m_na { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N>, <&kp A>; };
+        m_ni: m_ni { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N>, <&kp I>; };
+        m_nu: m_nu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N>, <&kp U>; };
+        m_ne: m_ne { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N>, <&kp E>; };
+        m_no: m_no { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N>, <&kp O>; };
+        m_ka: m_ka { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K>, <&kp A>; };
+        m_ki: m_ki { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K>, <&kp I>; };
+        m_ku: m_ku { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K>, <&kp U>; };
+        m_ke: m_ke { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K>, <&kp E>; };
+        m_ko: m_ko { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K>, <&kp O>; };
+        m_sa: m_sa { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S>, <&kp A>; };
+        m_si: m_si { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S>, <&kp I>; };
+        m_su: m_su { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S>, <&kp U>; };
+        m_se: m_se { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S>, <&kp E>; };
+        m_so: m_so { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S>, <&kp O>; };
+        m_ta: m_ta { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T>, <&kp A>; };
+        m_ti: m_ti { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T>, <&kp I>; };
+        m_tu: m_tu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T>, <&kp U>; };
+        m_te: m_te { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T>, <&kp E>; };
+        m_to: m_to { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp T>, <&kp O>; };
+        m_ha: m_ha { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H>, <&kp A>; };
+        m_hi: m_hi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H>, <&kp I>; };
+        m_hu: m_hu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H>, <&kp U>; };
+        m_he: m_he { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H>, <&kp E>; };
+        m_ho: m_ho { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp H>, <&kp O>; };
+        m_ma: m_ma { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M>, <&kp A>; };
+        m_mi: m_mi { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M>, <&kp I>; };
+        m_mu: m_mu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M>, <&kp U>; };
+        m_me: m_me { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M>, <&kp E>; };
+        m_mo: m_mo { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M>, <&kp O>; };
     };
 
     behaviors {
