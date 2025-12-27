@@ -894,7 +894,7 @@
             layers = <0>;
 
 /* 誤爆防止のための沈殿時間設定（既存の combos { compatible... 直後に追記） */
-        settling-time-ms = <5>;
+        ;
 
         /* --- 3文字同時押し補正 (Timeout 60ms) --- */
         // A=15, I=14, U=3, E=13, O=16
