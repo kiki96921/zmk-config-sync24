@@ -24,7 +24,7 @@
         ze { timeout-ms = <30>; key-positions = <25 13>; bindings = <&new_macro_ze>; };
 
         // 2. ★ 4文字・頻出語句コンボ (Timeout: 45ms)
-        // ん系列 (N+S+母音)
+        // ん系列 (N+S+母音) -> 出力は NNN+母音
         cb_nnna { timeout-ms = <45>; key-positions = <20 21 15>;    bindings = <&m_nnna>; }; // N+S+A (んな)
         cb_nnni { timeout-ms = <45>; key-positions = <20 21 14>;    bindings = <&m_nnni>; }; // N+S+I (んに)
         cb_nnnu { timeout-ms = <45>; key-positions = <20 21 3>;     bindings = <&m_nnnu>; }; // N+S+U (んぬ)
@@ -206,12 +206,12 @@
         m_sita: m_sita { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp I &kp T &kp A>; tap-ms = <1>; wait-ms = <0>; };
         m_goto: m_goto { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp O &kp T &kp O>; tap-ms = <1>; wait-ms = <0>; };
 
-        // ん系列マクロ
-        m_nnna: m_nnna { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp A>; tap-ms = <1>; wait-ms = <0>; };
-        m_nnni: m_nnni { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp I>; tap-ms = <1>; wait-ms = <0>; };
-        m_nnnu: m_nnnu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp U>; tap-ms = <1>; wait-ms = <0>; };
-        m_nnne: m_nnne { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp E>; tap-ms = <1>; wait-ms = <0>; };
-        m_nnno: m_nnno { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp O>; tap-ms = <1>; wait-ms = <0>; };
+        // ん系列マクロ修正：Nを3回に変更して "nn(ん) + な行" を実現
+        m_nnna: m_nnna { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp A>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnni: m_nnni { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp I>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnnu: m_nnnu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp U>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnne: m_nnne { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp E>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnno: m_nnno { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp O>; tap-ms = <1>; wait-ms = <0>; };
 
         m_nai: m_nai { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp A &kp I>; tap-ms = <1>; };
         m_nei: m_nei { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp E &kp I>; tap-ms = <1>; };
