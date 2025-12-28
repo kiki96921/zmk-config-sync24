@@ -23,16 +23,24 @@
         nnn { timeout-ms = <30>; key-positions = <20 21>; bindings = <&new_macro_nn>; };
         ze { timeout-ms = <30>; key-positions = <25 13>; bindings = <&new_macro_ze>; };
 
-        // 2. ★ 新設：4文字・頻出語句コンボ (Timeout: 45ms)
+        // 2. ★ 4文字・頻出語句コンボ (Timeout: 45ms)
+        // ん系列 (N+S+母音)
+        cb_nnna { timeout-ms = <45>; key-positions = <20 21 15>;    bindings = <&m_nnna>; }; // N+S+A (んな)
+        cb_nnni { timeout-ms = <45>; key-positions = <20 21 14>;    bindings = <&m_nnni>; }; // N+S+I (んに)
+        cb_nnnu { timeout-ms = <45>; key-positions = <20 21 3>;     bindings = <&m_nnnu>; }; // N+S+U (んぬ)
+        cb_nnne { timeout-ms = <45>; key-positions = <20 21 13>;    bindings = <&m_nnne>; }; // N+S+E (んね)
+        cb_nnno { timeout-ms = <45>; key-positions = <20 21 16>;    bindings = <&m_nnno>; }; // N+S+O (んの)
+
+        // その他頻出語句
         cb_shou { timeout-ms = <45>; key-positions = <21 22 16 3>;  bindings = <&m_shou>; }; // S+H+O+U
         cb_kyou { timeout-ms = <45>; key-positions = <31 9 16 3>;   bindings = <&m_kyou>; }; // K+Y+O+U
         cb_chou { timeout-ms = <45>; key-positions = <19 9 16 3>;   bindings = <&m_chou>; }; // T+Y+O+U
         cb_ryou { timeout-ms = <45>; key-positions = <8 9 16 3>;    bindings = <&m_ryou>; }; // R+Y+O+U
         cb_desu { timeout-ms = <45>; key-positions = <19 13 21 3>;  bindings = <&m_desu>; }; // T+E+S+U
         cb_masu { timeout-ms = <45>; key-positions = <32 16 21 3>;  bindings = <&m_masu>; }; // M+O+S+U
-        cb_nna  { timeout-ms = <45>; key-positions = <20 21 15>;    bindings = <&m_nna>;  }; // N+S+A
         cb_koto { timeout-ms = <45>; key-positions = <31 15 16>;    bindings = <&m_koto>; }; // K+A+O
         cb_mono { timeout-ms = <45>; key-positions = <32 15 16>;    bindings = <&m_mono>; }; // M+A+O
+        cb_goto { timeout-ms = <45>; key-positions = <30 16 15>;    bindings = <&m_goto>; }; // G+O+A
         cb_sita { timeout-ms = <45>; key-positions = <21 14 19 15>; bindings = <&m_sita>; }; // S+I+T+A
 
         // 3. 3文字コンボ (Timeout: 45ms)
@@ -193,10 +201,17 @@
         m_ryou: m_ryou { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp R &kp Y &kp O &kp U>; tap-ms = <1>; wait-ms = <0>; };
         m_desu: m_desu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp D &kp E &kp S &kp U>; tap-ms = <1>; wait-ms = <0>; };
         m_masu: m_masu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp A &kp S &kp U>; tap-ms = <1>; wait-ms = <0>; };
-        m_nna:  m_nna  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp A>; tap-ms = <1>; wait-ms = <0>; };
         m_koto: m_koto { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp K &kp O &kp T &kp O>; tap-ms = <1>; wait-ms = <0>; };
         m_mono: m_mono { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp M &kp O &kp N &kp O>; tap-ms = <1>; wait-ms = <0>; };
         m_sita: m_sita { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp I &kp T &kp A>; tap-ms = <1>; wait-ms = <0>; };
+        m_goto: m_goto { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp O &kp T &kp O>; tap-ms = <1>; wait-ms = <0>; };
+
+        // ん系列マクロ
+        m_nnna: m_nnna { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp A>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnni: m_nnni { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp I>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnnu: m_nnnu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp U>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnne: m_nnne { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp E>; tap-ms = <1>; wait-ms = <0>; };
+        m_nnno: m_nnno { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp O>; tap-ms = <1>; wait-ms = <0>; };
 
         m_nai: m_nai { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp A &kp I>; tap-ms = <1>; };
         m_nei: m_nei { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp E &kp I>; tap-ms = <1>; };
