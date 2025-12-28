@@ -17,170 +17,170 @@
     combos {
         compatible = "zmk,combos";
 
-        // 1. 特殊・ユーティリティ (Timeout: 40ms / Idle: 20ms)
-        combo_us { timeout-ms = <40>; key-positions = <15 16>; bindings = <&kp INTERNATIONAL_5>; require-prior-idle-ms = <20>; };
-        combo_kana { timeout-ms = <40>; key-positions = <20 19>; bindings = <&kp INTERNATIONAL_4>; require-prior-idle-ms = <20>; };
-        nnn { timeout-ms = <40>; key-positions = <20 21>; bindings = <&new_macro_nn>; require-prior-idle-ms = <20>; };
-        ze { timeout-ms = <40>; key-positions = <25 13>; bindings = <&new_macro_ze>; require-prior-idle-ms = <20>; };
+        // 1. 特殊・ユーティリティ (最速判定)
+        combo_us { timeout-ms = <30>; key-positions = <15 16>; bindings = <&kp INTERNATIONAL_5>; };
+        combo_kana { timeout-ms = <30>; key-positions = <20 19>; bindings = <&kp INTERNATIONAL_4>; };
+        nnn { timeout-ms = <30>; key-positions = <20 21>; bindings = <&new_macro_nn>; };
+        ze { timeout-ms = <30>; key-positions = <25 13>; bindings = <&new_macro_ze>; };
 
-        // 2. ★ 4文字・頻出語句コンボ (Timeout: 55ms / Idle: 20ms)
-        // ん系列 (N+S+母音)
-        cb_nnna { timeout-ms = <55>; key-positions = <20 21 15>;    bindings = <&m_nnna>; require-prior-idle-ms = <20>; }; // んな
-        cb_nnni { timeout-ms = <55>; key-positions = <20 21 14>;    bindings = <&m_nnni>; require-prior-idle-ms = <20>; }; // んに
-        cb_nnnu { timeout-ms = <55>; key-positions = <20 21 3>;     bindings = <&m_nnnu>; require-prior-idle-ms = <20>; }; // んぬ
-        cb_nnne { timeout-ms = <55>; key-positions = <20 21 13>;    bindings = <&m_nnne>; require-prior-idle-ms = <20>; }; // んね
-        cb_nnno { timeout-ms = <55>; key-positions = <20 21 16>;    bindings = <&m_nnno>; require-prior-idle-ms = <20>; }; // んの
+        // 2. ★ 4文字・頻出語句コンボ (Timeout: 45ms)
+        // ん系列 (N+S+母音) -> 出力は NNN+母音
+        cb_nnna { timeout-ms = <45>; key-positions = <20 21 15>;    bindings = <&m_nnna>; }; // N+S+A (んな)
+        cb_nnni { timeout-ms = <45>; key-positions = <20 21 14>;    bindings = <&m_nnni>; }; // N+S+I (んに)
+        cb_nnnu { timeout-ms = <45>; key-positions = <20 21 3>;     bindings = <&m_nnnu>; }; // N+S+U (んぬ)
+        cb_nnne { timeout-ms = <45>; key-positions = <20 21 13>;    bindings = <&m_nnne>; }; // N+S+E (んね)
+        cb_nnno { timeout-ms = <45>; key-positions = <20 21 16>;    bindings = <&m_nnno>; }; // N+S+O (んの)
 
         // その他頻出語句
-        cb_shou { timeout-ms = <55>; key-positions = <21 22 16 3>;  bindings = <&m_shou>; require-prior-idle-ms = <20>; }; 
-        cb_kyou { timeout-ms = <55>; key-positions = <31 9 16 3>;   bindings = <&m_kyou>; require-prior-idle-ms = <20>; }; 
-        cb_chou { timeout-ms = <55>; key-positions = <19 9 16 3>;   bindings = <&m_chou>; require-prior-idle-ms = <20>; }; 
-        cb_ryou { timeout-ms = <55>; key-positions = <8 9 16 3>;    bindings = <&m_ryou>; require-prior-idle-ms = <20>; }; 
-        cb_desu { timeout-ms = <55>; key-positions = <19 13 21 3>;  bindings = <&m_desu>; require-prior-idle-ms = <20>; }; 
-        cb_masu { timeout-ms = <55>; key-positions = <32 16 21 3>;  bindings = <&m_masu>; require-prior-idle-ms = <20>; }; 
-        cb_koto { timeout-ms = <55>; key-positions = <31 15 16>;    bindings = <&m_koto>; require-prior-idle-ms = <20>; }; 
-        cb_mono { timeout-ms = <55>; key-positions = <32 15 16>;    bindings = <&m_mono>; require-prior-idle-ms = <20>; }; 
-        cb_goto { timeout-ms = <55>; key-positions = <30 16 15>;    bindings = <&m_goto>; require-prior-idle-ms = <20>; }; 
-        cb_sita { timeout-ms = <55>; key-positions = <21 14 19 15>; bindings = <&m_sita>; require-prior-idle-ms = <20>; }; 
+        cb_shou { timeout-ms = <45>; key-positions = <21 22 16 3>;  bindings = <&m_shou>; }; // S+H+O+U
+        cb_kyou { timeout-ms = <45>; key-positions = <31 9 16 3>;   bindings = <&m_kyou>; }; // K+Y+O+U
+        cb_chou { timeout-ms = <45>; key-positions = <19 9 16 3>;   bindings = <&m_chou>; }; // T+Y+O+U
+        cb_ryou { timeout-ms = <45>; key-positions = <8 9 16 3>;    bindings = <&m_ryou>; }; // R+Y+O+U
+        cb_desu { timeout-ms = <45>; key-positions = <19 13 21 3>;  bindings = <&m_desu>; }; // T+E+S+U
+        cb_masu { timeout-ms = <45>; key-positions = <32 16 21 3>;  bindings = <&m_masu>; }; // M+O+S+U
+        cb_koto { timeout-ms = <45>; key-positions = <31 15 16>;    bindings = <&m_koto>; }; // K+A+O
+        cb_mono { timeout-ms = <45>; key-positions = <32 15 16>;    bindings = <&m_mono>; }; // M+A+O
+        cb_goto { timeout-ms = <45>; key-positions = <30 16 15>;    bindings = <&m_goto>; }; // G+O+A
+        cb_sita { timeout-ms = <45>; key-positions = <21 14 19 15>; bindings = <&m_sita>; }; // S+I+T+A
 
-        // 3. 3文字コンボ (Timeout: 55ms / Idle: 20ms)
-        cb_nai { timeout-ms = <55>; key-positions = <20 15 14>; bindings = <&m_nai>; require-prior-idle-ms = <20>; };
-        cb_nei { timeout-ms = <55>; key-positions = <20 13 14>; bindings = <&m_nei>; require-prior-idle-ms = <20>; };
-        cb_nou { timeout-ms = <55>; key-positions = <20 16 3>;  bindings = <&m_nou>; require-prior-idle-ms = <20>; };
-        cb_kai { timeout-ms = <55>; key-positions = <31 15 14>; bindings = <&m_kai>; require-prior-idle-ms = <20>; };
-        cb_kei { timeout-ms = <55>; key-positions = <31 13 14>; bindings = <&m_kei>; require-prior-idle-ms = <20>; };
-        cb_kou { timeout-ms = <55>; key-positions = <31 16 3>;  bindings = <&m_kou>; require-prior-idle-ms = <20>; };
-        cb_sai { timeout-ms = <55>; key-positions = <21 15 14>; bindings = <&m_sai>; require-prior-idle-ms = <20>; };
-        cb_sei { timeout-ms = <55>; key-positions = <21 13 14>; bindings = <&m_sei>; require-prior-idle-ms = <20>; };
-        cb_sou { timeout-ms = <55>; key-positions = <21 16 3>;  bindings = <&m_sou>; require-prior-idle-ms = <20>; };
-        cb_tai { timeout-ms = <55>; key-positions = <19 15 14>; bindings = <&m_tai>; require-prior-idle-ms = <20>; };
-        cb_tei { timeout-ms = <55>; key-positions = <19 13 14>; bindings = <&m_tei>; require-prior-idle-ms = <20>; };
-        cb_tou { timeout-ms = <55>; key-positions = <19 16 3>;  bindings = <&m_tou>; require-prior-idle-ms = <20>; };
-        cb_hai { timeout-ms = <55>; key-positions = <22 15 14>; bindings = <&m_hai>; require-prior-idle-ms = <20>; };
-        cb_hei { timeout-ms = <55>; key-positions = <22 13 14>; bindings = <&m_hei>; require-prior-idle-ms = <20>; };
-        cb_hou { timeout-ms = <55>; key-positions = <22 16 3>;  bindings = <&m_hou>; require-prior-idle-ms = <20>; };
-        cb_mai { timeout-ms = <55>; key-positions = <32 15 14>; bindings = <&m_mai>; require-prior-idle-ms = <20>; };
-        cb_mei { timeout-ms = <55>; key-positions = <32 13 14>; bindings = <&m_mei>; require-prior-idle-ms = <20>; };
-        cb_mou { timeout-ms = <55>; key-positions = <32 16 3>;  bindings = <&m_mou>; require-prior-idle-ms = <20>; };
-        cb_rai { timeout-ms = <55>; key-positions = <8 15 14>;  bindings = <&m_rai>; require-prior-idle-ms = <20>; };
-        cb_rei { timeout-ms = <55>; key-positions = <8 13 14>;  bindings = <&m_rei>; require-prior-idle-ms = <20>; };
-        cb_rou { timeout-ms = <55>; key-positions = <8 16 3>;   bindings = <&m_rou>; require-prior-idle-ms = <20>; };
-        cb_gai { timeout-ms = <55>; key-positions = <30 15 14>; bindings = <&m_gai>; require-prior-idle-ms = <20>; };
-        cb_gei { timeout-ms = <55>; key-positions = <30 13 14>; bindings = <&m_gei>; require-prior-idle-ms = <20>; };
-        cb_gou { timeout-ms = <55>; key-positions = <30 16 3>;  bindings = <&m_gou>; require-prior-idle-ms = <20>; };
-        cb_zai { timeout-ms = <55>; key-positions = <25 15 14>; bindings = <&m_zai>; require-prior-idle-ms = <20>; };
-        cb_zei { timeout-ms = <55>; key-positions = <25 13 14>; bindings = <&m_zei>; require-prior-idle-ms = <20>; };
-        cb_zou { timeout-ms = <55>; key-positions = <25 16 3>;  bindings = <&m_zou>; require-prior-idle-ms = <20>; };
-        cb_dai { timeout-ms = <55>; key-positions = <18 15 14>; bindings = <&m_dai>; require-prior-idle-ms = <20>; };
-        cb_dou { timeout-ms = <55>; key-positions = <18 16 3>;  bindings = <&m_dou>; require-prior-idle-ms = <20>; };
-        cb_bai { timeout-ms = <55>; key-positions = <34 15 14>; bindings = <&m_bai>; require-prior-idle-ms = <20>; };
-        cb_bei { timeout-ms = <55>; key-positions = <34 13 14>; bindings = <&m_bei>; require-prior-idle-ms = <20>; };
-        cb_bou { timeout-ms = <55>; key-positions = <34 16 3>;  bindings = <&m_bou>; require-prior-idle-ms = <20>; };
-        cb_pai { timeout-ms = <55>; key-positions = <10 15 14>; bindings = <&m_pai>; require-prior-idle-ms = <20>; };
-        cb_pei { timeout-ms = <55>; key-positions = <10 13 14>; bindings = <&m_pei>; require-prior-idle-ms = <20>; };
-        cb_pou { timeout-ms = <55>; key-positions = <10 16 3>;  bindings = <&m_pou>; require-prior-idle-ms = <20>; };
-        cb_you { timeout-ms = <55>; key-positions = <9 16 3>;   bindings = <&m_you>; require-prior-idle-ms = <20>; };
-        cb_yoi { timeout-ms = <55>; key-positions = <9 16 14>;  bindings = <&m_yoi>; require-prior-idle-ms = <20>; };
-        cb_jou { timeout-ms = <55>; key-positions = <33 16 3>;  bindings = <&m_jou>; require-prior-idle-ms = <20>; };
-        cb_shu { timeout-ms = <55>; key-positions = <21 22 3>;  bindings = <&m_shu>; require-prior-idle-ms = <20>; };
-        cb_sha { timeout-ms = <55>; key-positions = <21 22 15>; bindings = <&m_sha>; require-prior-idle-ms = <20>; };
-        cb_sho { timeout-ms = <55>; key-positions = <21 22 16>; bindings = <&m_sho>; require-prior-idle-ms = <20>; };
+        // 3. 3文字コンボ (Timeout: 45ms)
+        cb_nai { timeout-ms = <45>; key-positions = <20 15 14>; bindings = <&m_nai>; };
+        cb_nei { timeout-ms = <45>; key-positions = <20 13 14>; bindings = <&m_nei>; };
+        cb_nou { timeout-ms = <45>; key-positions = <20 16 3>;  bindings = <&m_nou>; };
+        cb_kai { timeout-ms = <45>; key-positions = <31 15 14>; bindings = <&m_kai>; };
+        cb_kei { timeout-ms = <45>; key-positions = <31 13 14>; bindings = <&m_kei>; };
+        cb_kou { timeout-ms = <45>; key-positions = <31 16 3>;  bindings = <&m_kou>; };
+        cb_sai { timeout-ms = <45>; key-positions = <21 15 14>; bindings = <&m_sai>; };
+        cb_sei { timeout-ms = <45>; key-positions = <21 13 14>; bindings = <&m_sei>; };
+        cb_sou { timeout-ms = <45>; key-positions = <21 16 3>;  bindings = <&m_sou>; };
+        cb_tai { timeout-ms = <45>; key-positions = <19 15 14>; bindings = <&m_tai>; };
+        cb_tei { timeout-ms = <45>; key-positions = <19 13 14>; bindings = <&m_tei>; };
+        cb_tou { timeout-ms = <45>; key-positions = <19 16 3>;  bindings = <&m_tou>; };
+        cb_hai { timeout-ms = <45>; key-positions = <22 15 14>; bindings = <&m_hai>; };
+        cb_hei { timeout-ms = <45>; key-positions = <22 13 14>; bindings = <&m_hei>; };
+        cb_hou { timeout-ms = <45>; key-positions = <22 16 3>;  bindings = <&m_hou>; };
+        cb_mai { timeout-ms = <45>; key-positions = <32 15 14>; bindings = <&m_mai>; };
+        cb_mei { timeout-ms = <45>; key-positions = <32 13 14>; bindings = <&m_mei>; };
+        cb_mou { timeout-ms = <45>; key-positions = <32 16 3>;  bindings = <&m_mou>; };
+        cb_rai { timeout-ms = <45>; key-positions = <8 15 14>;  bindings = <&m_rai>; };
+        cb_rei { timeout-ms = <45>; key-positions = <8 13 14>;  bindings = <&m_rei>; };
+        cb_rou { timeout-ms = <45>; key-positions = <8 16 3>;   bindings = <&m_rou>; };
+        cb_gai { timeout-ms = <45>; key-positions = <30 15 14>; bindings = <&m_gai>; };
+        cb_gei { timeout-ms = <45>; key-positions = <30 13 14>; bindings = <&m_gei>; };
+        cb_gou { timeout-ms = <45>; key-positions = <30 16 3>;  bindings = <&m_gou>; };
+        cb_zai { timeout-ms = <45>; key-positions = <25 15 14>; bindings = <&m_zai>; };
+        cb_zei { timeout-ms = <45>; key-positions = <25 13 14>; bindings = <&m_zei>; };
+        cb_zou { timeout-ms = <45>; key-positions = <25 16 3>;  bindings = <&m_zou>; };
+        cb_dai { timeout-ms = <45>; key-positions = <18 15 14>; bindings = <&m_dai>; };
+        cb_dou { timeout-ms = <45>; key-positions = <18 16 3>;  bindings = <&m_dou>; };
+        cb_bai { timeout-ms = <45>; key-positions = <34 15 14>; bindings = <&m_bai>; };
+        cb_bei { timeout-ms = <45>; key-positions = <34 13 14>; bindings = <&m_bei>; };
+        cb_bou { timeout-ms = <45>; key-positions = <34 16 3>;  bindings = <&m_bou>; };
+        cb_pai { timeout-ms = <45>; key-positions = <10 15 14>; bindings = <&m_pai>; };
+        cb_pei { timeout-ms = <45>; key-positions = <10 13 14>; bindings = <&m_pei>; };
+        cb_pou { timeout-ms = <45>; key-positions = <10 16 3>;  bindings = <&m_pou>; };
+        cb_you { timeout-ms = <45>; key-positions = <9 16 3>;   bindings = <&m_you>; };
+        cb_yoi { timeout-ms = <45>; key-positions = <9 16 14>;  bindings = <&m_yoi>; };
+        cb_jou { timeout-ms = <45>; key-positions = <33 16 3>;  bindings = <&m_jou>; };
+        cb_shu { timeout-ms = <45>; key-positions = <21 22 3>;  bindings = <&m_shu>; };
+        cb_sha { timeout-ms = <45>; key-positions = <21 22 15>; bindings = <&m_sha>; };
+        cb_sho { timeout-ms = <45>; key-positions = <21 22 16>; bindings = <&m_sho>; };
 
-        // 4. 2文字コンボ (Timeout: 40ms / Idle: 20ms)
-        cb_na { timeout-ms = <40>; key-positions = <20 15>; bindings = <&m_na>; require-prior-idle-ms = <20>; };
-        cb_ni { timeout-ms = <40>; key-positions = <20 14>; bindings = <&m_ni>; require-prior-idle-ms = <20>; };
-        cb_nu { timeout-ms = <40>; key-positions = <20 3>;  bindings = <&m_nu>; require-prior-idle-ms = <20>; };
-        cb_ne { timeout-ms = <40>; key-positions = <20 13>; bindings = <&m_ne>; require-prior-idle-ms = <20>; };
-        cb_no { timeout-ms = <40>; key-positions = <20 16>; bindings = <&m_no>; require-prior-idle-ms = <20>; };
-        cb_ka { timeout-ms = <40>; key-positions = <31 15>; bindings = <&m_ka>; require-prior-idle-ms = <20>; };
-        cb_ki { timeout-ms = <40>; key-positions = <31 14>; bindings = <&m_ki>; require-prior-idle-ms = <20>; };
-        cb_ku { timeout-ms = <40>; key-positions = <31 3>;  bindings = <&m_ku>; require-prior-idle-ms = <20>; };
-        cb_ke { timeout-ms = <40>; key-positions = <31 13>; bindings = <&m_ke>; require-prior-idle-ms = <20>; };
-        cb_ko { timeout-ms = <40>; key-positions = <31 16>; bindings = <&m_ko>; require-prior-idle-ms = <20>; };
-        cb_sa { timeout-ms = <40>; key-positions = <21 15>; bindings = <&m_sa>; require-prior-idle-ms = <20>; };
-        cb_si { timeout-ms = <40>; key-positions = <21 14>; bindings = <&m_si>; require-prior-idle-ms = <20>; };
-        cb_su { timeout-ms = <40>; key-positions = <21 3>;  bindings = <&m_su>; require-prior-idle-ms = <20>; };
-        cb_se { timeout-ms = <40>; key-positions = <21 13>; bindings = <&m_se>; require-prior-idle-ms = <20>; };
-        cb_so { timeout-ms = <40>; key-positions = <21 16>; bindings = <&m_so>; require-prior-idle-ms = <20>; };
-        cb_ta { timeout-ms = <40>; key-positions = <19 15>; bindings = <&m_ta>; require-prior-idle-ms = <20>; };
-        cb_ti { timeout-ms = <40>; key-positions = <19 14>; bindings = <&m_ti>; require-prior-idle-ms = <20>; };
-        cb_tu { timeout-ms = <40>; key-positions = <19 3>;  bindings = <&m_tu>; require-prior-idle-ms = <20>; };
-        cb_te { timeout-ms = <40>; key-positions = <19 13>; bindings = <&m_te>; require-prior-idle-ms = <20>; };
-        cb_to { timeout-ms = <40>; key-positions = <19 16>; bindings = <&m_to>; require-prior-idle-ms = <20>; };
-        cb_ha { timeout-ms = <40>; key-positions = <22 15>; bindings = <&m_ha>; require-prior-idle-ms = <20>; };
-        cb_hi { timeout-ms = <40>; key-positions = <22 14>; bindings = <&m_hi>; require-prior-idle-ms = <20>; };
-        cb_hu { timeout-ms = <40>; key-positions = <22 3>;  bindings = <&m_hu>; require-prior-idle-ms = <20>; };
-        cb_he { timeout-ms = <40>; key-positions = <22 13>; bindings = <&m_he>; require-prior-idle-ms = <20>; };
-        cb_ho { timeout-ms = <40>; key-positions = <22 16>; bindings = <&m_ho>; require-prior-idle-ms = <20>; };
-        cb_ma { timeout-ms = <40>; key-positions = <32 15>; bindings = <&m_ma>; require-prior-idle-ms = <20>; };
-        cb_mi { timeout-ms = <40>; key-positions = <32 14>; bindings = <&m_mi>; require-prior-idle-ms = <20>; };
-        cb_mu { timeout-ms = <40>; key-positions = <32 3>;  bindings = <&m_mu>; require-prior-idle-ms = <20>; };
-        cb_me { timeout-ms = <40>; key-positions = <32 13>; bindings = <&m_me>; require-prior-idle-ms = <20>; };
-        cb_mo { timeout-ms = <40>; key-positions = <32 16>; bindings = <&m_mo>; require-prior-idle-ms = <20>; };
-        cb_ra { timeout-ms = <40>; key-positions = <8 15>;  bindings = <&m_ra>; require-prior-idle-ms = <20>; };
-        cb_ri { timeout-ms = <40>; key-positions = <8 14>;  bindings = <&m_ri>; require-prior-idle-ms = <20>; };
-        cb_ru { timeout-ms = <40>; key-positions = <8 3>;   bindings = <&m_ru>; require-prior-idle-ms = <20>; };
-        cb_re { timeout-ms = <40>; key-positions = <8 13>;  bindings = <&m_re>; require-prior-idle-ms = <20>; };
-        cb_ro { timeout-ms = <40>; key-positions = <8 16>;  bindings = <&m_ro>; require-prior-idle-ms = <20>; };
-        cb_ba { timeout-ms = <40>; key-positions = <34 15>; bindings = <&m_ba>; require-prior-idle-ms = <20>; };
-        cb_bi { timeout-ms = <40>; key-positions = <34 14>; bindings = <&m_bi>; require-prior-idle-ms = <20>; };
-        cb_bu { timeout-ms = <40>; key-positions = <34 3>;  bindings = <&m_bu>; require-prior-idle-ms = <20>; };
-        cb_be { timeout-ms = <40>; key-positions = <34 13>; bindings = <&m_be>; require-prior-idle-ms = <20>; };
-        cb_bo { timeout-ms = <40>; key-positions = <34 16>; bindings = <&m_bo>; require-prior-idle-ms = <20>; };
-        cb_ga { timeout-ms = <40>; key-positions = <30 15>; bindings = <&m_ga>; require-prior-idle-ms = <20>; };
-        cb_gi { timeout-ms = <40>; key-positions = <30 14>; bindings = <&m_gi>; require-prior-idle-ms = <20>; };
-        cb_gu { timeout-ms = <40>; key-positions = <30 3>;  bindings = <&m_gu>; require-prior-idle-ms = <20>; };
-        cb_ge { timeout-ms = <40>; key-positions = <30 13>; bindings = <&m_ge>; require-prior-idle-ms = <20>; };
-        cb_go { timeout-ms = <40>; key-positions = <30 16>; bindings = <&m_go>; require-prior-idle-ms = <20>; };
-        cb_za { timeout-ms = <40>; key-positions = <25 15>; bindings = <&m_za>; require-prior-idle-ms = <20>; };
-        cb_zi { timeout-ms = <40>; key-positions = <25 14>; bindings = <&m_zi>; require-prior-idle-ms = <20>; };
-        cb_zu { timeout-ms = <40>; key-positions = <25 3>;  bindings = <&m_zu>; require-prior-idle-ms = <20>; };
-        cb_zo { timeout-ms = <40>; key-positions = <25 16>; bindings = <&m_zo>; require-prior-idle-ms = <20>; };
-        cb_da { timeout-ms = <40>; key-positions = <18 15>; bindings = <&m_da>; require-prior-idle-ms = <20>; };
-        cb_di { timeout-ms = <40>; key-positions = <18 14>; bindings = <&m_di>; require-prior-idle-ms = <20>; };
-        cb_du { timeout-ms = <40>; key-positions = <18 3>;  bindings = <&m_du>; require-prior-idle-ms = <20>; };
-        cb_de { timeout-ms = <40>; key-positions = <18 13>; bindings = <&m_de>; require-prior-idle-ms = <20>; };
-        cb_do { timeout-ms = <40>; key-positions = <18 16>; bindings = <&m_do>; require-prior-idle-ms = <20>; };
-        cb_pa { timeout-ms = <40>; key-positions = <10 15>; bindings = <&m_pa>; require-prior-idle-ms = <20>; };
-        cb_pi { timeout-ms = <40>; key-positions = <10 14>; bindings = <&m_pi>; require-prior-idle-ms = <20>; };
-        cb_pu { timeout-ms = <40>; key-positions = <10 3>;  bindings = <&m_pu>; require-prior-idle-ms = <20>; };
-        cb_pe { timeout-ms = <40>; key-positions = <10 13>; bindings = <&m_pe>; require-prior-idle-ms = <20>; };
-        cb_po { timeout-ms = <40>; key-positions = <10 16>; bindings = <&m_po>; require-prior-idle-ms = <20>; };
-        cb_ya { timeout-ms = <40>; key-positions = <9 15>;  bindings = <&m_ya>; require-prior-idle-ms = <20>; };
-        cb_yu { timeout-ms = <40>; key-positions = <9 3>;   bindings = <&m_yu>; require-prior-idle-ms = <20>; };
-        cb_yo { timeout-ms = <40>; key-positions = <9 16>;  bindings = <&m_yo>; require-prior-idle-ms = <20>; };
-        cb_wa { timeout-ms = <40>; key-positions = <7 15>;  bindings = <&m_wa>; require-prior-idle-ms = <20>; };
-        cb_wo { timeout-ms = <40>; key-positions = <7 16>;  bindings = <&m_wo>; require-prior-idle-ms = <20>; };
-        cb_ja { timeout-ms = <40>; key-positions = <33 15>; bindings = <&m_ja>; require-prior-idle-ms = <20>; };
-        cb_ji { timeout-ms = <40>; key-positions = <33 14>; bindings = <&m_ji>; require-prior-idle-ms = <20>; };
-        cb_ju { timeout-ms = <40>; key-positions = <33 3>;  bindings = <&m_ju>; require-prior-idle-ms = <20>; };
-        cb_je { timeout-ms = <40>; key-positions = <33 13>; bindings = <&m_je>; require-prior-idle-ms = <20>; };
-        cb_jo { timeout-ms = <40>; key-positions = <33 16>; bindings = <&m_jo>; require-prior-idle-ms = <20>; };
-        cb_fa { timeout-ms = <40>; key-positions = <6 15>;  bindings = <&m_fa>; require-prior-idle-ms = <20>; };
-        cb_fi { timeout-ms = <40>; key-positions = <6 14>;  bindings = <&m_fi>; require-prior-idle-ms = <20>; };
-        cb_fe { timeout-ms = <40>; key-positions = <6 13>;  bindings = <&m_fe>; require-prior-idle-ms = <20>; };
-        cb_fo { timeout-ms = <40>; key-positions = <6 16>;  bindings = <&m_fo>; require-prior-idle-ms = <20>; };
-        cb_va { timeout-ms = <40>; key-positions = <28 15>; bindings = <&m_va>; require-prior-idle-ms = <20>; };
-        cb_vi { timeout-ms = <40>; key-positions = <28 14>; bindings = <&m_vi>; require-prior-idle-ms = <20>; };
-        cb_vu { timeout-ms = <40>; key-positions = <28 3>;  bindings = <&m_vu>; require-prior-idle-ms = <20>; };
-        cb_ve { timeout-ms = <40>; key-positions = <28 13>; bindings = <&m_ve>; require-prior-idle-ms = <20>; };
-        cb_vo { timeout-ms = <40>; key-positions = <28 16>; bindings = <&m_vo>; require-prior-idle-ms = <20>; };
+        // 4. 2文字コンボ (Timeout: 30ms)
+        cb_na { timeout-ms = <30>; key-positions = <20 15>; bindings = <&m_na>; };
+        cb_ni { timeout-ms = <30>; key-positions = <20 14>; bindings = <&m_ni>; };
+        cb_nu { timeout-ms = <30>; key-positions = <20 3>;  bindings = <&m_nu>; };
+        cb_ne { timeout-ms = <30>; key-positions = <20 13>; bindings = <&m_ne>; };
+        cb_no { timeout-ms = <30>; key-positions = <20 16>; bindings = <&m_no>; };
+        cb_ka { timeout-ms = <30>; key-positions = <31 15>; bindings = <&m_ka>; };
+        cb_ki { timeout-ms = <30>; key-positions = <31 14>; bindings = <&m_ki>; };
+        cb_ku { timeout-ms = <30>; key-positions = <31 3>;  bindings = <&m_ku>; };
+        cb_ke { timeout-ms = <30>; key-positions = <31 13>; bindings = <&m_ke>; };
+        cb_ko { timeout-ms = <30>; key-positions = <31 16>; bindings = <&m_ko>; };
+        cb_sa { timeout-ms = <30>; key-positions = <21 15>; bindings = <&m_sa>; };
+        cb_si { timeout-ms = <30>; key-positions = <21 14>; bindings = <&m_si>; };
+        cb_su { timeout-ms = <30>; key-positions = <21 3>;  bindings = <&m_su>; };
+        cb_se { timeout-ms = <30>; key-positions = <21 13>; bindings = <&m_se>; };
+        cb_so { timeout-ms = <30>; key-positions = <21 16>; bindings = <&m_so>; };
+        cb_ta { timeout-ms = <30>; key-positions = <19 15>; bindings = <&m_ta>; };
+        cb_ti { timeout-ms = <30>; key-positions = <19 14>; bindings = <&m_ti>; };
+        cb_tu { timeout-ms = <30>; key-positions = <19 3>;  bindings = <&m_tu>; };
+        cb_te { timeout-ms = <30>; key-positions = <19 13>; bindings = <&m_te>; };
+        cb_to { timeout-ms = <30>; key-positions = <19 16>; bindings = <&m_to>; };
+        cb_ha { timeout-ms = <30>; key-positions = <22 15>; bindings = <&m_ha>; };
+        cb_hi { timeout-ms = <30>; key-positions = <22 14>; bindings = <&m_hi>; };
+        cb_hu { timeout-ms = <30>; key-positions = <22 3>;  bindings = <&m_hu>; };
+        cb_he { timeout-ms = <30>; key-positions = <22 13>; bindings = <&m_he>; };
+        cb_ho { timeout-ms = <30>; key-positions = <22 16>; bindings = <&m_ho>; };
+        cb_ma { timeout-ms = <30>; key-positions = <32 15>; bindings = <&m_ma>; };
+        cb_mi { timeout-ms = <30>; key-positions = <32 14>; bindings = <&m_mi>; };
+        cb_mu { timeout-ms = <30>; key-positions = <32 3>;  bindings = <&m_mu>; };
+        cb_me { timeout-ms = <30>; key-positions = <32 13>; bindings = <&m_me>; };
+        cb_mo { timeout-ms = <30>; key-positions = <32 16>; bindings = <&m_mo>; };
+        cb_ra { timeout-ms = <30>; key-positions = <8 15>;  bindings = <&m_ra>; };
+        cb_ri { timeout-ms = <30>; key-positions = <8 14>;  bindings = <&m_ri>; };
+        cb_ru { timeout-ms = <30>; key-positions = <8 3>;   bindings = <&m_ru>; };
+        cb_re { timeout-ms = <30>; key-positions = <8 13>;  bindings = <&m_re>; };
+        cb_ro { timeout-ms = <30>; key-positions = <8 16>;  bindings = <&m_ro>; };
+        cb_ba { timeout-ms = <30>; key-positions = <34 15>; bindings = <&m_ba>; };
+        cb_bi { timeout-ms = <30>; key-positions = <34 14>; bindings = <&m_bi>; };
+        cb_bu { timeout-ms = <30>; key-positions = <34 3>;  bindings = <&m_bu>; };
+        cb_be { timeout-ms = <30>; key-positions = <34 13>; bindings = <&m_be>; };
+        cb_bo { timeout-ms = <30>; key-positions = <34 16>; bindings = <&m_bo>; };
+        cb_ga { timeout-ms = <30>; key-positions = <30 15>; bindings = <&m_ga>; };
+        cb_gi { timeout-ms = <30>; key-positions = <30 14>; bindings = <&m_gi>; };
+        cb_gu { timeout-ms = <30>; key-positions = <30 3>;  bindings = <&m_gu>; };
+        cb_ge { timeout-ms = <30>; key-positions = <30 13>; bindings = <&m_ge>; };
+        cb_go { timeout-ms = <30>; key-positions = <30 16>; bindings = <&m_go>; };
+        cb_za { timeout-ms = <30>; key-positions = <25 15>; bindings = <&m_za>; };
+        cb_zi { timeout-ms = <30>; key-positions = <25 14>; bindings = <&m_zi>; };
+        cb_zu { timeout-ms = <30>; key-positions = <25 3>;  bindings = <&m_zu>; };
+        cb_zo { timeout-ms = <30>; key-positions = <25 16>; bindings = <&m_zo>; };
+        cb_da { timeout-ms = <30>; key-positions = <18 15>; bindings = <&m_da>; };
+        cb_di { timeout-ms = <30>; key-positions = <18 14>; bindings = <&m_di>; };
+        cb_du { timeout-ms = <30>; key-positions = <18 3>;  bindings = <&m_du>; };
+        cb_de { timeout-ms = <30>; key-positions = <18 13>; bindings = <&m_de>; };
+        cb_do { timeout-ms = <30>; key-positions = <18 16>; bindings = <&m_do>; };
+        cb_pa { timeout-ms = <30>; key-positions = <10 15>; bindings = <&m_pa>; };
+        cb_pi { timeout-ms = <30>; key-positions = <10 14>; bindings = <&m_pi>; };
+        cb_pu { timeout-ms = <30>; key-positions = <10 3>;  bindings = <&m_pu>; };
+        cb_pe { timeout-ms = <30>; key-positions = <10 13>; bindings = <&m_pe>; };
+        cb_po { timeout-ms = <30>; key-positions = <10 16>; bindings = <&m_po>; };
+        cb_ya { timeout-ms = <30>; key-positions = <9 15>;  bindings = <&m_ya>; };
+        cb_yu { timeout-ms = <30>; key-positions = <9 3>;   bindings = <&m_yu>; };
+        cb_yo { timeout-ms = <30>; key-positions = <9 16>;  bindings = <&m_yo>; };
+        cb_wa { timeout-ms = <30>; key-positions = <7 15>;  bindings = <&m_wa>; };
+        cb_wo { timeout-ms = <30>; key-positions = <7 16>;  bindings = <&m_wo>; };
+        cb_ja { timeout-ms = <30>; key-positions = <33 15>; bindings = <&m_ja>; };
+        cb_ji { timeout-ms = <30>; key-positions = <33 14>; bindings = <&m_ji>; };
+        cb_ju { timeout-ms = <30>; key-positions = <33 3>;  bindings = <&m_ju>; };
+        cb_je { timeout-ms = <30>; key-positions = <33 13>; bindings = <&m_je>; };
+        cb_jo { timeout-ms = <30>; key-positions = <33 16>; bindings = <&m_jo>; };
+        cb_fa { timeout-ms = <30>; key-positions = <6 15>;  bindings = <&m_fa>; };
+        cb_fi { timeout-ms = <30>; key-positions = <6 14>;  bindings = <&m_fi>; };
+        cb_fe { timeout-ms = <30>; key-positions = <6 13>;  bindings = <&m_fe>; };
+        cb_fo { timeout-ms = <30>; key-positions = <6 16>;  bindings = <&m_fo>; };
+        cb_va { timeout-ms = <30>; key-positions = <28 15>; bindings = <&m_va>; };
+        cb_vi { timeout-ms = <30>; key-positions = <28 14>; bindings = <&m_vi>; };
+        cb_vu { timeout-ms = <30>; key-positions = <28 3>;  bindings = <&m_vu>; };
+        cb_ve { timeout-ms = <30>; key-positions = <28 13>; bindings = <&m_ve>; };
+        cb_vo { timeout-ms = <30>; key-positions = <28 16>; bindings = <&m_vo>; };
 
-        // 5. モディファイア・その他 (Timeout: 55ms / Idle: 20ms)
-        combo_util { timeout-ms = <55>; key-positions = <16 15 14>; bindings = <&kp LEFT_CONTROL>; require-prior-idle-ms = <20>; };
-        name { timeout-ms = <55>; key-positions = <19 20 21>; bindings = <&kp RIGHT_CONTROL>; require-prior-idle-ms = <20>; };
-        kakko { timeout-ms = <55>; key-positions = <2 3 4>; bindings = <&new_macrokakko>; require-prior-idle-ms = <20>; };
-        shift1 { timeout-ms = <40>; key-positions = <16 4>; bindings = <&kp LEFT_SHIFT>; require-prior-idle-ms = <20>; };
-        shift2 { timeout-ms = <40>; key-positions = <19 7>; bindings = <&kp RIGHT_SHIFT>; require-prior-idle-ms = <20>; };
-        ctrl1 { timeout-ms = <40>; key-positions = <15 3>; bindings = <&kp RIGHT_CONTROL>; require-prior-idle-ms = <20>; };
-        ctrl2 { timeout-ms = <40>; key-positions = <20 8>; bindings = <&kp RIGHT_CONTROL>; require-prior-idle-ms = <20>; };
-        space1 { timeout-ms = <40>; key-positions = <16 28>; bindings = <&kp SPACE>; require-prior-idle-ms = <20>; };
-        space2 { timeout-ms = <40>; key-positions = <19 31>; bindings = <&kp SPACE>; require-prior-idle-ms = <20>; };
-        layer1 { timeout-ms = <40>; key-positions = <31 32>; bindings = <&mo 1>; require-prior-idle-ms = <20>; };
-        left_alt2 { timeout-ms = <40>; key-positions = <2 14>; bindings = <&kp LEFT_ALT>; require-prior-idle-ms = <20>; };
-        right_alt2 { timeout-ms = <40>; key-positions = <9 21>; bindings = <&kp RIGHT_ALT>; require-prior-idle-ms = <20>; };
-        left_gui2 { timeout-ms = <40>; key-positions = <14 26>; bindings = <&kp LEFT_GUI>; require-prior-idle-ms = <20>; };
-        right_gui2 { timeout-ms = <40>; key-positions = <21 33>; bindings = <&kp RIGHT_GUI>; require-prior-idle-ms = <20>; };
+        // 5. モディファイア・その他
+        combo_util { timeout-ms = <45>; key-positions = <16 15 14>; bindings = <&kp LEFT_CONTROL>; };
+        name { timeout-ms = <45>; key-positions = <19 20 21>; bindings = <&kp RIGHT_CONTROL>; };
+        kakko { timeout-ms = <45>; key-positions = <2 3 4>; bindings = <&new_macrokakko>; };
+        shift1 { timeout-ms = <30>; key-positions = <16 4>; bindings = <&kp LEFT_SHIFT>; };
+        shift2 { timeout-ms = <30>; key-positions = <19 7>; bindings = <&kp RIGHT_SHIFT>; };
+        ctrl1 { timeout-ms = <30>; key-positions = <15 3>; bindings = <&kp RIGHT_CONTROL>; };
+        ctrl2 { timeout-ms = <30>; key-positions = <20 8>; bindings = <&kp RIGHT_CONTROL>; };
+        space1 { timeout-ms = <30>; key-positions = <16 28>; bindings = <&kp SPACE>; };
+        space2 { timeout-ms = <30>; key-positions = <19 31>; bindings = <&kp SPACE>; };
+        layer1 { timeout-ms = <30>; key-positions = <31 32>; bindings = <&mo 1>; };
+        left_alt2 { timeout-ms = <30>; key-positions = <2 14>; bindings = <&kp LEFT_ALT>; };
+        right_alt2 { timeout-ms = <30>; key-positions = <9 21>; bindings = <&kp RIGHT_ALT>; };
+        left_gui2 { timeout-ms = <30>; key-positions = <14 26>; bindings = <&kp LEFT_GUI>; };
+        right_gui2 { timeout-ms = <30>; key-positions = <21 33>; bindings = <&kp RIGHT_GUI>; };
     };
 
     /* ==========================================================================
@@ -206,14 +206,13 @@
         m_sita: m_sita { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp I &kp T &kp A>; tap-ms = <1>; wait-ms = <0>; };
         m_goto: m_goto { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp O &kp T &kp O>; tap-ms = <1>; wait-ms = <0>; };
 
-        // ん系列マクロ
+        // ん系列マクロ修正：Nを3回に変更して "nn(ん) + な行" を実現
         m_nnna: m_nnna { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp A>; tap-ms = <1>; wait-ms = <0>; };
         m_nnni: m_nnni { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp I>; tap-ms = <1>; wait-ms = <0>; };
         m_nnnu: m_nnnu { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp U>; tap-ms = <1>; wait-ms = <0>; };
         m_nnne: m_nnne { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp E>; tap-ms = <1>; wait-ms = <0>; };
         m_nnno: m_nnno { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp N &kp N &kp O>; tap-ms = <1>; wait-ms = <0>; };
 
-        // 補正用マクロ (tap-ms=1 で統一)
         m_nai: m_nai { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp A &kp I>; tap-ms = <1>; };
         m_nei: m_nei { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp E &kp I>; tap-ms = <1>; };
         m_nou: m_nou { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp N &kp O &kp U>; tap-ms = <1>; };
@@ -338,7 +337,7 @@
     };
 
     /* ==========================================================================
-       Behaviors (保持時間などの既存設定)
+       Behaviors
        ========================================================================== */
     behaviors {
         new_behaviorperi: new_behaviorperi {
