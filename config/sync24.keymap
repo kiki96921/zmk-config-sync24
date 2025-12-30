@@ -37,9 +37,9 @@
 
         // ★ここを差し替え（です/ます等を A+O 系に変更し、末尾に . + Space）
         cb_desu  { timeout-ms = <45>; key-positions = <15 16 19>;    bindings = <&m_desu_ps>;   }; // A+O+T -> desu.(space)
-        cb_masu  { timeout-ms = <45>; key-positions = <15 16 21>;    bindings = <&m_masu_ps>;   }; // A+O+S -> masu.(space)
+        cb_masu  { timeout-ms = <45>; key-positions = <15 16 21>; bindings = <&m_masita_ps>; }; // A+O+S -> ました.(space)
         cb_desita{ timeout-ms = <45>; key-positions = <15 16 18>;    bindings = <&m_desita_ps>; }; // A+O+D -> desita.(space)
-        cb_masita{ timeout-ms = <45>; key-positions = <15 16 20>;    bindings = <&m_masita_ps>; }; // A+O+N -> masita.(space)
+        cb_masita{ timeout-ms = <45>; key-positions = <15 16 20>; bindings = <&m_masu_ps>;   }; // A+O+N -> ます.(space)
         cb_masenn{ timeout-ms = <45>; key-positions = <15 16 20 21>; bindings = <&m_masenn_ps>; }; // A+O+N+S -> masenn.(space)
         cb_deshou{ timeout-ms = <45>; key-positions = <15 16 9>;     bindings = <&m_deshou_ps>; }; // A+O+Y -> deshou.(space)
 
