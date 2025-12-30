@@ -34,21 +34,19 @@
         cb_kyou { timeout-ms = <45>; key-positions = <31 9 16 3>;   bindings = <&m_kyou>; }; // K+Y+O+U
         cb_chou { timeout-ms = <45>; key-positions = <19 9 16 3>;   bindings = <&m_chou>; }; // T+Y+O+U
         cb_ryou { timeout-ms = <45>; key-positions = <8 9 16 3>;    bindings = <&m_ryou>; }; // R+Y+O+U
-        cb_desu { timeout-ms = <45>; key-positions = <19 13 21 3>;  bindings = <&m_desu>; }; // T+E+S+U
-        cb_masu { timeout-ms = <45>; key-positions = <32 16 21 3>;  bindings = <&m_masu>; }; // M+O+S+U
+
+        // ★ここを差し替え（です/ます等を A+O 系に変更し、末尾に . + Space）
+        cb_desu  { timeout-ms = <45>; key-positions = <15 16 19>;    bindings = <&m_desu_ps>;   }; // A+O+T -> desu.(space)
+        cb_masu  { timeout-ms = <45>; key-positions = <15 16 21>;    bindings = <&m_masu_ps>;   }; // A+O+S -> masu.(space)
+        cb_desita{ timeout-ms = <45>; key-positions = <15 16 18>;    bindings = <&m_desita_ps>; }; // A+O+D -> desita.(space)
+        cb_masita{ timeout-ms = <45>; key-positions = <15 16 20>;    bindings = <&m_masita_ps>; }; // A+O+N -> masita.(space)
+        cb_masenn{ timeout-ms = <45>; key-positions = <15 16 20 21>; bindings = <&m_masenn_ps>; }; // A+O+N+S -> masenn.(space)
+        cb_deshou{ timeout-ms = <45>; key-positions = <15 16 9>;     bindings = <&m_deshou_ps>; }; // A+O+Y -> deshou.(space)
+
         cb_koto { timeout-ms = <45>; key-positions = <31 15 16>;    bindings = <&m_koto>; }; // K+A+O
         cb_mono { timeout-ms = <45>; key-positions = <32 15 16>;    bindings = <&m_mono>; }; // M+A+O
         cb_goto { timeout-ms = <45>; key-positions = <30 16 15>;    bindings = <&m_goto>; }; // G+O+A
         cb_sita { timeout-ms = <45>; key-positions = <21 14 19 15>; bindings = <&m_sita>; }; // S+I+T+A
-
-        // === 追加：丁寧語クラスタ（A+I+O 接頭）===
-        // 位置: A=15, I=14, O=16, M=32, T=19, S=21, D=18, N=20, Y=9
-        cb_masu_aiom    { timeout-ms = <45>; key-positions = <15 14 16 32>;    bindings = <&m_masu>;   }; // ます
-        cb_desu_aiot    { timeout-ms = <45>; key-positions = <15 14 16 19>;    bindings = <&m_desu>;   }; // です
-        cb_masita_aios  { timeout-ms = <45>; key-positions = <15 14 16 21>;    bindings = <&m_masita>; }; // ました
-        cb_desita_aiod  { timeout-ms = <45>; key-positions = <15 14 16 18>;    bindings = <&m_desita>; }; // でした
-        cb_masenn_aiosn { timeout-ms = <45>; key-positions = <15 14 16 21 20>; bindings = <&m_masenn>; }; // ません
-        cb_deshou_aioy  { timeout-ms = <45>; key-positions = <15 14 16 9>;     bindings = <&m_deshou>; }; // でしょう
 
         // 3. 3文字コンボ (Timeout: 45ms)
         cb_nai { timeout-ms = <45>; key-positions = <20 15 14>; bindings = <&m_nai>; };
@@ -175,12 +173,8 @@
         cb_vo { timeout-ms = <30>; key-positions = <28 16>; bindings = <&m_vo>; };
 
         // 5. モディファイア・その他
-        // （解除）A+I+O を Ctrl にしていた combo_util は削除
-        // combo_util { timeout-ms = <45>; key-positions = <16 15 14>; bindings = <&kp LEFT_CONTROL>; };
-
-        // （解除）T+N+S を Ctrl にしていた name は削除
-        // name { timeout-ms = <45>; key-positions = <19 20 21>; bindings = <&kp RIGHT_CONTROL>; };
-
+        combo_util { timeout-ms = <45>; key-positions = <16 15 14>; bindings = <&kp LEFT_CONTROL>; };
+        name { timeout-ms = <45>; key-positions = <19 20 21>; bindings = <&kp RIGHT_CONTROL>; };
         kakko { timeout-ms = <45>; key-positions = <2 3 4>; bindings = <&new_macrokakko>; };
         shift1 { timeout-ms = <30>; key-positions = <16 4>; bindings = <&kp LEFT_SHIFT>; };
         shift2 { timeout-ms = <30>; key-positions = <19 7>; bindings = <&kp RIGHT_SHIFT>; };
@@ -218,35 +212,46 @@
         m_sita: m_sita { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp S &kp I &kp T &kp A>; tap-ms = <1>; wait-ms = <0>; };
         m_goto: m_goto { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp G &kp O &kp T &kp O>; tap-ms = <1>; wait-ms = <0>; };
 
-        // === 追加：丁寧語クラスタ用マクロ ===
-        m_masita: m_masita {
+        // ★追加：末尾に「. + Space」を付ける版
+        m_desu_ps: m_desu_ps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp M &kp A &kp S &kp I &kp T &kp A>;
+            bindings = <&kp D &kp E &kp S &kp U &kp PERIOD &kp SPACE>;
             tap-ms = <1>;
             wait-ms = <0>;
         };
-
-        m_desita: m_desita {
+        m_masu_ps: m_masu_ps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp D &kp E &kp S &kp I &kp T &kp A>;
+            bindings = <&kp M &kp A &kp S &kp U &kp PERIOD &kp SPACE>;
             tap-ms = <1>;
             wait-ms = <0>;
         };
-
-        m_masenn: m_masenn {
+        m_desita_ps: m_desita_ps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp M &kp A &kp S &kp E &kp N &kp N>;
+            bindings = <&kp D &kp E &kp S &kp I &kp T &kp A &kp PERIOD &kp SPACE>;
             tap-ms = <1>;
             wait-ms = <0>;
         };
-
-        m_deshou: m_deshou {
+        m_masita_ps: m_masita_ps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp D &kp E &kp S &kp H &kp O &kp U>;
+            bindings = <&kp M &kp A &kp S &kp I &kp T &kp A &kp PERIOD &kp SPACE>;
+            tap-ms = <1>;
+            wait-ms = <0>;
+        };
+        m_masenn_ps: m_masenn_ps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp A &kp S &kp E &kp N &kp N &kp PERIOD &kp SPACE>;
+            tap-ms = <1>;
+            wait-ms = <0>;
+        };
+        m_deshou_ps: m_deshou_ps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp E &kp S &kp H &kp O &kp U &kp PERIOD &kp SPACE>;
             tap-ms = <1>;
             wait-ms = <0>;
         };
