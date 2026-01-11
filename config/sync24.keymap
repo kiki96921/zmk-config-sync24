@@ -50,27 +50,27 @@
 
         cb_nnna {
             timeout-ms = <45>;
-            key-positions = <20 21 15>;
+            key-positions = <21 15 19>;
             bindings = <&m_nnna>;
         }; // んな
         cb_nnni {
             timeout-ms = <45>;
-            key-positions = <20 21 14>;
+            key-positions = <21 14 19>;
             bindings = <&m_nnni>;
         }; // んに
         cb_nnnu {
             timeout-ms = <45>;
-            key-positions = <20 21 3>;
+            key-positions = <21 3 19>;
             bindings = <&m_nnnu>;
         }; // んぬ
         cb_nnne {
             timeout-ms = <45>;
-            key-positions = <20 21 13>;
+            key-positions = <21 13 19>;
             bindings = <&m_nnne>;
         }; // んね
         cb_nnno {
             timeout-ms = <45>;
-            key-positions = <20 21 16>;
+            key-positions = <21 16 19>;
             bindings = <&m_nnno>;
         }; // んの
         cb_shou {
