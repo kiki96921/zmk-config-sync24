@@ -194,13 +194,6 @@
             tap-ms = <1>;
         };
 
-        m_ne: m_ne {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N &kp E>;
-            tap-ms = <1>;
-        };
-
         m_no: m_no {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
